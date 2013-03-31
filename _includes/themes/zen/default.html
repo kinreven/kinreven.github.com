@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<html xmlns:wb=“http://open.weibo.com/wb”>
 <head>
 	<meta charset="utf-8">
 	<title>{{ page.title }}</title>
@@ -27,6 +28,7 @@
 						<p>I'm a Firmware developer from Chengdu, China. I'm interested in Unix/Linux, C language, shell script, Perl and so on.</p>
 
 						<div>
+						<wb:follow-button uid="2991975565" type="red_2" width="136" height="24" ></wb:follow-button>
 						<p><iframe src="http://ghbtns.com/github-btn.html?user={{ site.author.github }}&type=follow&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="180" height="30"></iframe></p>
 						</div>
@@ -38,7 +40,7 @@
 			</div>
 		</div>
 	</div>
-
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 {% include JB/analytics %}
 </body>
 </html>
