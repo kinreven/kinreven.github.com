@@ -7,14 +7,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Rambla' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css/style.css" />
 	<link href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
-	{% if 0 > 1 %}
-		<meta name="twitter:card" content="summary">
-		<meta name="twitter:url" content="{{ root_url }}{{ post.url }}">
-		<meta name="twitter:title" content="{{ post.title }}">
-		<meta name="twitter:description" content="{{ post.content[0, 200] }}">
-		<meta name="twitter:site" content="{{ author.twitter }}">
-		<meta name="twitter:creator" content="{{ author.twitter }}">
-	{% endif %}
 
 </head>
 <body>
