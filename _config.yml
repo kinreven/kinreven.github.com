@@ -10,12 +10,12 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : Kevin Ren
-tagline: A geek's pages
+tagline: A Geek's Pages
 author :
   name : Kevin Ren
   email : kinreven@gmail.com
   github : kinreven
-  twitter : kinreven
+  twitter :
   feedburner :
   gravatar :
     url : http://www.gravatar.com/avatar/bb91c2b7d72f84a1d9dc0ed0e0b2a456.png
