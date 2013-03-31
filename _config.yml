@@ -16,10 +16,10 @@ author :
   email : kinreven@gmail.com
   github : kinreven
   twitter : kinreven
-  feedburner : kinreven
+  feedburner :
   gravatar :
-    url : https://en.gravatar.com/userimage/13363990/4bd44ba6339e4525ad9f839f46244100.jpg
-    caption : Looking snazzy...
+    url : http://www.gravatar.com/avatar/bb91c2b7d72f84a1d9dc0ed0e0b2a456.png
+    caption :
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
