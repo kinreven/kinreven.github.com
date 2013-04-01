@@ -11,7 +11,7 @@ pygments: true
 #
 title : Kevin Ren
 tagline: A Geek's Pages
-author :
+author : kinreven
   name : Kevin Ren
   email : kinreven@gmail.com
   github : kinreven
@@ -82,7 +82,7 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider :
+    provider : disqus
     disqus :
       short_name : kinreven
     livefyre :
