@@ -15,25 +15,25 @@ tags: [Program, Shell Script]
 
 大部分的程序员估计都会使用SVN作为版本控制工具（或许一些老顽固还在使用VSS，或许我自己out，大部分都在使用Git了），那在TortoiseSVN 1.7之前你总有为工程目录下面到处都是.svn的目录而苦恼过，或许你早已经google了一些小的tool可以解决这个问题，但是我这里想介绍的是通过shell script也很容易实现诸如此类的需求：  
 ```bash
-	#!/bin/bash
-    CleanSVN () {
-        FILES=`ls -a`;
-        for FILE in $FILES
-        do
-            if [ -d $FILE ]; then
-                if [ "$FILE" = ".svn" ]; then
-                    dir=`pwd`;
-                    echo "$dir/$FILE";
-                    rm -rf $FILE;
-                elif [ "$FILE" != "." ] && [ "$FILE" != ".." ]; then
-                    cd $FILE;
-                    CleanSVN;
-                    cd ..;
-                fi
+#!/bin/bash
+CleanSVN () {
+    FILES=`ls -a`;
+    for FILE in $FILES
+    do
+        if [ -d $FILE ]; then
+            if [ "$FILE" = ".svn" ]; then
+                dir=`pwd`;
+                echo "$dir/$FILE";
+                rm -rf $FILE;
+            elif [ "$FILE" != "." ] && [ "$FILE" != ".." ]; then
+                cd $FILE;
+                CleanSVN;
+                cd ..;
             fi
-        done
-    }
-    CleanSVN;
+        fi
+    done
+}
+CleanSVN;
 ```
     
 [Download PDF](https://github.com/kinreven/ShellCollection/blob/master/shell_%20script_introduce.pdf)
