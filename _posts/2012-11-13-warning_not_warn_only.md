@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "编译器的waring往往不只是警告"
+title: "编译器的warning往往不只是警告"
 description: ""
-category: program
-tags: [program, C language]
+category: Program
+tags: [Program, C Language]
 ---
 {% include JB/setup %}
 
