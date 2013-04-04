@@ -14,9 +14,9 @@ tags: [Program, Shell Script]
 前面有关无关的话讲了许多，接下来简单介绍一下shell script，shell script你可以认为他就是一门高级的脚本语言，shell就是他的解释执行器，然后许许多多的系统自带的命令你可以想象成为是标准函数库。对于解释器，在大多数的posix系统里面都将Bash作为默认的shell，所以这里的shell script的语法也默指Bash的语法规则。Bash，你在大多数的Linux或者Unix 发行版中都应该可以找到，而且你一样可以从Windows下面的Unix Like环境Cygwin下面打开。然后shell script的语法部分内容都在我的投影片里面有讲述，后面会给出投影片的位置。下面分享一个简单的shell script实例：
 
 大部分的程序员估计都会使用SVN作为版本控制工具（或许一些老顽固还在使用VSS，或许我自己out，大部分都在使用Git了），那在TortoiseSVN 1.7之前你总有为工程目录下面到处都是.svn的目录而苦恼过，或许你早已经google了一些小的tool可以解决这个问题，但是我这里想介绍的是通过shell script也很容易实现诸如此类的需求：  
-```bash
-#!/bin/bash
-CleanSVN () {
+
+	#!/bin/bash
+	CleanSVN () {
     FILES=`ls -a`;
     for FILE in $FILES
     do
@@ -32,8 +32,7 @@ CleanSVN () {
             fi
         fi
     done
-}
-CleanSVN;
-```
+	}
+	CleanSVN;
     
 [Download PDF](https://github.com/kinreven/ShellCollection/blob/master/shell_%20script_introduce.pdf)
