@@ -13,12 +13,7 @@ tagline: Supporting tagline
 	  			{% assign content = post.content %}
 				{% if post.title %}
 				    <li class="home">
-				    	<table>
-				    		<col align="left" />
-				    		<tr>
-				    			<td>{{ post.date | date: '%d %B, %Y' }} &raquo;</td>
-				    			<td><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></td>
-				    		</tr>
+				    	<span>{{ post.date | date: '%d %B, %Y' }} &raquo;</span> <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
 				    </li>
 				{% endif %}
 			{% endfor %}
