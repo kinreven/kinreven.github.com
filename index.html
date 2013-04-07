@@ -14,6 +14,7 @@ tagline: Supporting tagline
 				{% if post.title %}
 				    <li class="home">
 				    	<table>
+				    		<col align="left" />
 				    		<tr>
 				    			<td>{{ post.date | date: '%d %B, %Y' }} &raquo;</td>
 				    			<td><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></td>
