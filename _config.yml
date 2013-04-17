@@ -22,9 +22,9 @@ author :
   twitter :
   feedburner :
   gravatar :
-    #url : http://www.gravatar.com/avatar/bb91c2b7d72f84a1d9dc0ed0e0b2a456.png
+    url : http://www.gravatar.com/avatar/bb91c2b7d72f84a1d9dc0ed0e0b2a456.png
     #url : https://www.evernote.com/shard/s65/sh/aeb50818-b4a5-4506-b1f3-0b673ea93b31/84356a7f2bd2b4a600bdb435c6451e52/res/cc318697-fa39-4d8c-a5d6-e0ec520dfb40/skitch.png
-    url: https://www.dropbox.com/s/fpasbc0bkp0ctcb/Kevin.png
+    #url: https://www.dropbox.com/s/fpasbc0bkp0ctcb/Kevin.png
     caption :
 
 # The production_url is only used when full-domain names are needed
