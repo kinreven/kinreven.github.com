@@ -7,6 +7,8 @@ tags: [Program, C Language]
 ---
 {% include JB/setup %}
 
+![clean code][img0]
+
 编译警告warning是所有的程序员都不可能不会遇到的一件事情，而且往往在一个很大的project里面这更是司空见惯的事情，如果那一天你敲下Make的瞬间少了那些一串串的“warning：”，你可能反而会怀疑是不是哪儿出来问题/_\  虽然说每一个人的编程习惯，个人素养不一样，对待warning的态度也不尽一致，但是总得来说80%的程序员都是抱着“warning is okay”的态度；追根溯源，为什么编译器会有Error和warning之分呢？通俗的来说，编译器确定不允许的就认为是Error，然后一些违背原则但是编译器又不确定的就定义为warning，既然是不确定，那就有一个限度的概念，所以编译器都允许定制warning的级别，但是建议在Makfile中打开“Wall"的选项，这样让更多的问题暴露无遗。所以说warning是编译器为程序员提供的友善建议和意见，即便编译器这么热心和蔼，但是仍然有很多程序员对Warning不以为然。下面就简单总结几个GNU GCC为我们编译时候发生warning的情况下，如果你不以为然，那么你将在稍后运行的时候变得很迷茫，苦恼和尴尬……
 
 __Case 1__
@@ -25,8 +27,8 @@ __Case 1__
 	    *(s + len) = 0;
 	 
 	    return 0;
-	}
-
+	} 
+	
 	Kevins-MacBook-Pro:Test kinreven$ gcc -c -Wall main.c -o main.o && gcc -c -Wall foo.c -o foo.o
 	main.c: In function ‘main’:
 	main.c:3: warning: implicit declaration of function ‘foo’
@@ -88,4 +90,6 @@ __Case 4__
 
 上面function在比较旧的GCC版本上面是会产生一条”comparison between signed and unsigned integer expressions“的警告，但是我在罪行GCC 4.x上面在加"-Wall -Wconversion -ansi"选项后均为产生warning信息。但是上面的隐式转换往往会给你带来非预期的结果，比如上面的delta盒unsigned ，然而delta是int，所以在表达式u - delta中，delta会隐式的转换成unsigned，如果delta是一个负数就会转换为一个很大的整数，这样的结果可能并不是你期望的/_\
 
-所以综上，我们应当认真对待warning，如果你不以为然，有时候他会让你后悔；养成好习惯，清除warning，让built windows更干净，让compiler更happy。
+**So，我们应当认真对待warning，如果你不以为然，有时候他会让你后悔；养成好习惯，清除warning，让built windows更干净，让compiler更happy。
+**
+[img0]:http://edgibbs.com/images/clean_code.jpg
