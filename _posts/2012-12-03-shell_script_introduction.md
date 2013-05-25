@@ -2,7 +2,7 @@
 layout: post
 title: "那些年我们一起追过的Shell Script"
 description: ""
-category: Program
+category: 程序人生
 tags: [Program, Shell Script]
 ---
 {% include JB/setup %}

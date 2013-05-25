@@ -3,7 +3,7 @@ layout: post
 title: "一个程序员的匆匆20余载"
 description: ""
 category: 生活感悟
-tags: [Life]
+tags: [Lifestyle]
 ---
 
 {% include JB/setup %}

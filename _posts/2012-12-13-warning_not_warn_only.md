@@ -2,7 +2,7 @@
 layout: post
 title: "编译器的warning往往不只是警告"
 description: ""
-category: Program
+category:程序人生
 tags: [Program, C Language]
 ---
 {% include JB/setup %}
