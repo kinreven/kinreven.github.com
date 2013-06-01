@@ -77,7 +77,7 @@ __Case 3__
 上面的warning写的很清楚，但是你如果不看估计也未必能发现你是多么的傻，估计在C的第一章节就会讲到常用的数据类型，然后老师还会强调每一种数据类型的长度，char在大多数的系统里面都应该是1byte，所以他的取值区间是-128 ~ 127,所以这里的++c 无论如何都是<255 ,所以这里永远都是ture，这样就产生了你不预期的死循环。
 
 __Case 4__
-
+```c
 	/* this is main.c */
 	int *a, *b;
 	void f(int delta, int base)
@@ -87,7 +87,7 @@ __Case 4__
 	        ; /*...*/
 	    }
 	}
-
+```
 上面function在比较旧的GCC版本上面是会产生一条”comparison between signed and unsigned integer expressions“的警告，但是我在罪行GCC 4.x上面在加"-Wall -Wconversion -ansi"选项后均为产生warning信息。但是上面的隐式转换往往会给你带来非预期的结果，比如上面的delta盒unsigned ，然而delta是int，所以在表达式u - delta中，delta会隐式的转换成unsigned，如果delta是一个负数就会转换为一个很大的整数，这样的结果可能并不是你期望的/_\
 
 **So，我们应当认真对待warning，如果你不以为然，有时候他会让你后悔；养成好习惯，清除warning，让built windows更干净，让compiler更happy。
