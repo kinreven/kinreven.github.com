@@ -12,7 +12,7 @@ tags: [Program, C Language]
 编译警告warning是所有的程序员都不可能不会遇到的一件事情，而且往往在一个很大的project里面这更是司空见惯的事情，如果那一天你敲下Make的瞬间少了那些一串串的“warning：”，你可能反而会怀疑是不是哪儿出来问题/_\  虽然说每一个人的编程习惯，个人素养不一样，对待warning的态度也不尽一致，但是总得来说80%的程序员都是抱着“warning is okay”的态度；追根溯源，为什么编译器会有Error和warning之分呢？通俗的来说，编译器确定不允许的就认为是Error，然后一些违背原则但是编译器又不确定的就定义为warning，既然是不确定，那就有一个限度的概念，所以编译器都允许定制warning的级别，但是建议在Makfile中打开“Wall"的选项，这样让更多的问题暴露无遗。所以说warning是编译器为程序员提供的友善建议和意见，即便编译器这么热心和蔼，但是仍然有很多程序员对Warning不以为然。下面就简单总结几个GNU GCC为我们编译时候发生warning的情况下，如果你不以为然，那么你将在稍后运行的时候变得很迷茫，苦恼和尴尬……
 
 __Case 1__
-	```c
+``` c
 	/* this is main.c */
 	int main(int argc, char **argv)
 	{
@@ -28,7 +28,7 @@ __Case 1__
 	 
 	    return 0;
 	} 
-	```
+```
 	Kevins-MacBook-Pro:Test kinreven$ gcc -c -Wall main.c -o main.o && gcc -c -Wall foo.c -o foo.o
 	main.c: In function ‘main’:
 	main.c:3: warning: implicit declaration of function ‘foo’
@@ -77,7 +77,7 @@ __Case 3__
 上面的warning写的很清楚，但是你如果不看估计也未必能发现你是多么的傻，估计在C的第一章节就会讲到常用的数据类型，然后老师还会强调每一种数据类型的长度，char在大多数的系统里面都应该是1byte，所以他的取值区间是-128 ~ 127,所以这里的++c 无论如何都是<255 ,所以这里永远都是ture，这样就产生了你不预期的死循环。
 
 __Case 4__
-```
+``` c
 	/* this is main.c */
 	int *a, *b;
 	void f(int delta, int base)
