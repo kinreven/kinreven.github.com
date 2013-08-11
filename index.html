@@ -21,12 +21,12 @@ layout: page
 
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-    <a href="/"><\Previous</a>
+    <a href="/">\<Previous</a>
     {% else %}
-    <a href="/page{{paginator.previous_page}}"><\Previous</a>
+    <a href="/page{{paginator.previous_page}}">\<Previous</a>
     {% endif %}
   {% else %}
-    <span class="previous disabled"><\Previous</span>
+    <span class="previous disabled">\<Previous</span>
   {% endif %}
 
       {% if paginator.page == 1 %}
