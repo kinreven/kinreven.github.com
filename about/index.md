@@ -3,10 +3,12 @@ title: About me
 layout: page
 comments: yes
 ---
-![kinreven](https://www.evernote.com/shard/s65/sh/aeb50818-b4a5-4506-b1f3-0b673ea93b31/84356a7f2bd2b4a600bdb435c6451e52/deep/0/Kevin%20Thinking.png)
- I'm a Firmware developer from Chengdu, China.
- I am working on File System and Multimedia engine
- in Embedded System for 3 years, and instreseting
+
+![kinreven](https://www.evernote.com/shard/s65/sh/aeb50818-b4a5-4506-b1f3-0b673ea93b31/84356a7f2bd2b4a600bdb435c6451e52/deep/0/Kevin%20Thinking.png)   
+
+ I'm a Firmware developer from Chengdu, China.   
+ I am working on File System and Multimedia engine   
+ in Embedded System for 3 years, and instreseting   
  in hacking C Language, Shell, Perl and so on.    
 
 Email:  [![gmail](https://www.evernote.com/shard/s65/sh/6e1f7f44-8a11-4c46-b38e-8a980466b2da/9b45ce3eb193fa55ad642dfa35e60178/deep/0/gmail.jpg)](mailto:kinreven@gmail.com)      
