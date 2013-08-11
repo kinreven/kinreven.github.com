@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 那些年我们一起追过的Shell Script
-category: 
+categories: 
 - Programming
 tags: 
 - Program

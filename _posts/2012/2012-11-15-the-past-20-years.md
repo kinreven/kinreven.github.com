@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一个程序员的匆匆20余载
-category: 
+categories: 
 - Lifestyle
 tags: 
 - Memory

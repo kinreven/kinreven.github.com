@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 编译器的warning往往不只是警告
-category: 
+categories: 
 - Programming
 tags: 
 - Program, C Language
