@@ -4,8 +4,6 @@ layout: page
 comments: yes
 ---
 
-![kinreven](https://www.evernote.com/shard/s65/sh/aeb50818-b4a5-4506-b1f3-0b673ea93b31/84356a7f2bd2b4a600bdb435c6451e52/deep/0/Kevin%20Thinking.png)   
-
  I'm a Firmware developer from Chengdu, China.   
  I am working on File System and Multimedia engine   
  in Embedded System for 3 years, and instreseting   
