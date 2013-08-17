@@ -154,7 +154,7 @@ a.ss-icon {
 	color: #ccc;
 }
 a:hover {
-    color: #EE0000;
+    /*color: #EE0000;*/
 }
 em {
     font-style: italic;
@@ -196,10 +196,11 @@ dl .meta {
 .listing-item time{
 	color:#999999;
 	font-family: Monaco, monospace;
+	font-size: 14px;
 }
 .listing-seperator{
-	font-weight:bold;
-	font-size: 18px;
+	/*font-weight:bold;*/
+	font-size: 20px;
 }
 
 .paginator {
