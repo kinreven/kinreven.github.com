@@ -12,7 +12,7 @@ tags:
 
 __Case 1__
 
-```c
+```cpp
 /* this is main.c */
 int main(int argc, char **argv)
 {
@@ -39,7 +39,7 @@ Kevins-MacBook-Pro:Test kinreven$ gcc main.o foo.o -o main.exe
 
 __Case 2__
 
-```c
+```cpp
 /* this is main.c */
 char a,b;
 void f(int *a, int *b)
@@ -64,7 +64,7 @@ main.c:12: warning: passing argument 2 of ‘f’ from incompat
 
 __Case 3__
 
-```c
+```cpp
 /* this is main.c */
 void f(void)
 {
@@ -83,7 +83,7 @@ main.c:5: warning: comparison is always true due to limited range of data type
 
 __Case 4__    
 
-```c
+```cpp
 /* this is main.c */
 int *a, *b;
 void f(int delta, int base)
