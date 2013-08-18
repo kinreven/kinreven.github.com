@@ -17,10 +17,10 @@ i
 
 大部分的程序员估计都会使用SVN作为版本控制工具（或许一些老顽固还在使用VSS，或许我自己out，大部分都在使用Git了），那在TortoiseSVN 1.7之前你总有为工程目录下面到处都是.svn的目录而苦恼过，或许你早已经google了一些小的tool可以解决这个问题，但是我这里想介绍的是通过shell script也很容易实现诸如此类的需求：  
 
-{% highlight bash%}
 
-	#!/bin/bash
-	CleanSVN () {
+```bash
+#!/bin/bash
+CleanSVN () {
     FILES=`ls -a`;
     for FILE in $FILES
     do
@@ -36,10 +36,9 @@ i
             fi
         fi
     done
-	}
-	CleanSVN;
-    
-{% endhighlight %}
+}
+CleanSVN;
+```
 
 
 [下载投影片](https://docs.google.com/file/d/0B9ezmBSEh8NBTG1FZkdwdUhmcUE/edit?usp=sharing)
