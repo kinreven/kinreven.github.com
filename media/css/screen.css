@@ -133,7 +133,7 @@ pre {
 }
 p code {
     font-family: Monaco, Consolas, monospace;
-    font-size: 14px;
+    /*font-size: 14px;*/
     /*border: 1px solid #edebea;*/
 }
 hr {
