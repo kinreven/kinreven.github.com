@@ -1,6 +1,6 @@
+name: Kevin Ren's Blog
 markdown: redcarpet
-permalink: /:year/:month/:title/
-url: http://kinreven.github.io
-author: Kevin Ren
 pygments: true
-paginate: 24
+paginate: 20
+paginate_path: "archives/:num"
+permalink: /:year/:month/:day/:title.html
