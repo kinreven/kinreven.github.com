@@ -1,10 +1,7 @@
 ---
 layout: post
 title:  "在Ubuntu下安装Ruby及Rails运行环境"
-date:   2013-09-15 19:05:55
 ---
-
-在按照Ruby China的Wiki安装Rails运行环境时，折腾了不少时间。下面就简单记录一下自己的安装过程，仅供参考。
 
 使用的Ubuntu版本是官网最新的`12.04 LTS`，Wiki原帖：[点击此处](http://ruby-china.org/wiki/install_ruby_guide)查看详情。
 
