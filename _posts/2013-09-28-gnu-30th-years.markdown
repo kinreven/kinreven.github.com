@@ -1,5 +1,4 @@
 
-
 This is the original announcement of the GNU Project, posted by Richard Stallman on September 27, 1983.
 
 The actual history of the GNU Project differs in many ways from this initial plan. For example, the beginning was delayed until January 1984. Several of the philosophical concepts of free software were not clarified until a few years later.
@@ -32,7 +31,7 @@ Individual programmers can contribute by writing a compatible duplicate of some 
 
 If I get donations of money, I may be able to hire a few people full or part time. The salary won't be high, but I'm looking for people for whom knowing they are helping humanity is as important as money. I view this as a way of enabling dedicated people to devote their full energies to working on GNU by sparing them the need to make a living in another way.
 
-For more information, contact me.
+#### For more information, contact me.
 
 Arpanet mail:
 RMS@MIT-MC.ARPA
