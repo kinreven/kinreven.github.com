@@ -1,5 +1,9 @@
+---
+layout: post
+title: "GNU 30周年"
+---
 
-This is the original announcement of the GNU Project, posted by Richard Stallman on September 27, 1983.
+his is the original announcement of the GNU Project, posted by Richard Stallman on September 27, 1983.
 
 The actual history of the GNU Project differs in many ways from this initial plan. For example, the beginning was delayed until January 1984. Several of the philosophical concepts of free software were not clarified until a few years later.
 
