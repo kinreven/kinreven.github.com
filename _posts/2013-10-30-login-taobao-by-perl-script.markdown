@@ -4,7 +4,7 @@ title: "用Perl实现登录淘宝并获取用户数据"
 ---
 
 
-```c
+```perl
 #!/usr/bin/perl
 
 use strict;
