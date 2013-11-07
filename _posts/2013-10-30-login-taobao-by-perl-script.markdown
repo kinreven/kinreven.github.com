@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "用Perl实现登录taobao并获取用户数据"
+title: "用Perl实现登录淘宝并获取用户数据"
 ---
 
 
-```
+```c
 #!/usr/bin/perl
 
 use strict;
