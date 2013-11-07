@@ -26,84 +26,84 @@ title: "一道字符串处理面试题解题报告"
 
 #### 解题报告
 
-````c
-    #include <stdio.h> 
+```c
+#include <stdio.h> 
 
-    enum { 
-        WORD_FIRST = 0, 
-        WORD_SPACE, 
-        WORD_NUMBER, 
-        WORD_OTHERS, 
-    };
+enum { 
+    WORD_FIRST = 0, 
+    WORD_SPACE, 
+    WORD_NUMBER, 
+    WORD_OTHERS, 
+};
 
-    #define ISDIGIT(x)   ((x) >= '0' ? ((x) <= '9' ? 1 : 0) : 0) 
-    #define ISLCHAR(x)   ((x) >= 'a' ? ((x) <= 'z' ? 1 : 0) : 0) 
-    #define ISSPACE(x)   ((x) == ' ')
-    #define UPCASE(x)    ((x) - 32)
+#define ISDIGIT(x)   ((x) >= '0' ? ((x) <= '9' ? 1 : 0) : 0) 
+#define ISLCHAR(x)   ((x) >= 'a' ? ((x) <= 'z' ? 1 : 0) : 0) 
+#define ISSPACE(x)   ((x) == ' ')
+#define UPCASE(x)    ((x) - 32)
 
-    int posjudge(char p, char n) 
-    {
-        int pos;
-        
-        if (ISSPACE(p) && ISLCHAR(n)) { 
-            pos = WORD_FIRST; 
-        } 
-        else if (ISSPACE(p) && ISSPACE(n)) { 
-            pos = WORD_SPACE; 
-        } 
-        else if (ISLCHAR(p) && ISDIGIT(n)) { 
-            pos = WORD_NUMBER; 
-        }
-        else if (ISDIGIT(p) && ISLCHAR(n)) {
-            pos = WORD_NUMBER;
-        }
-        else { 
-            pos = WORD_OTHERS; 
-        }
-
-        return pos; 
+int posjudge(char p, char n) 
+{
+    int pos;
+    
+    if (ISSPACE(p) && ISLCHAR(n)) { 
+        pos = WORD_FIRST; 
+    } 
+    else if (ISSPACE(p) && ISSPACE(n)) { 
+        pos = WORD_SPACE; 
+    } 
+    else if (ISLCHAR(p) && ISDIGIT(n)) { 
+        pos = WORD_NUMBER; 
+    }
+    else if (ISDIGIT(p) && ISLCHAR(n)) {
+        pos = WORD_NUMBER;
+    }
+    else { 
+        pos = WORD_OTHERS; 
     }
 
-    void transform(char *in, char *out) 
-    { 
-        int pos = ISLCHAR(*in) ? WORD_FIRST : WORD_OTHERS; 
-        char *pre = in;
-        
-        while (*in != '\0') { 
-            switch (pos) { 
-            case WORD_FIRST: 
-                *out++ = UPCASE(*in++); 
-                pos = posjudge(*pre++, *in); 
-                break; 
-            case WORD_SPACE: 
-                in++; 
-                pos = posjudge(*pre++, *in); 
-                break; 
-            case WORD_NUMBER: 
-                *out++ = '_'; 
-                *out++ = *in++; 
-                pos = posjudge(*pre++, *in); 
-                break; 
-            case WORD_OTHERS: 
-                *out++ = *in++; 
-                pos = posjudge(*pre++, *in); 
-                break;
-            default:
-                break;
-            } 
+    return pos; 
+}
+
+void transform(char *in, char *out) 
+{ 
+    int pos = ISLCHAR(*in) ? WORD_FIRST : WORD_OTHERS; 
+    char *pre = in;
+    
+    while (*in != '\0') { 
+        switch (pos) { 
+        case WORD_FIRST: 
+            *out++ = UPCASE(*in++); 
+            pos = posjudge(*pre++, *in); 
+            break; 
+        case WORD_SPACE: 
+            in++; 
+            pos = posjudge(*pre++, *in); 
+            break; 
+        case WORD_NUMBER: 
+            *out++ = '_'; 
+            *out++ = *in++; 
+            pos = posjudge(*pre++, *in); 
+            break; 
+        case WORD_OTHERS: 
+            *out++ = *in++; 
+            pos = posjudge(*pre++, *in); 
+            break;
+        default:
+            break;
         } 
     } 
+} 
 
-    int main(int argc, char *argv[]) 
-    { 
-        char in[200] = "9this is     a  999 bcd0    99cat   "; 
-        char out[200]; 
+int main(int argc, char *argv[]) 
+{ 
+    char in[200] = "9this is     a  999 bcd0    99cat   "; 
+    char out[200]; 
 
-        printf("in:%s\n", in); 
-        transform(in, out); 
-        printf("out:%s\n", out); 
-        
-        return 0; 
-    } 
-````
+    printf("in:%s\n", in); 
+    transform(in, out); 
+    printf("out:%s\n", out); 
+    
+    return 0; 
+}
+```
 
