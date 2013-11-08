@@ -47,7 +47,7 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 由于历史的问题，无论是VIM还是Emacs他们的初始状态下看起来都是那么的古老(甚至可以说丑陋)，让初学者第一眼
 看去都很难相信这就是传说中的Emacs！
 
-![](https://www.evernote.com/shard/s65/sh/33ef025f-be64-4005-aee0-1c16974833f5/d52e1d71694c4e74fc246da77348f43d/deep/0/the_original_emacs.png)
+<https://www.evernote.com/shard/s65/sh/33ef025f-be64-4005-aee0-1c16974833f5/d52e1d71694c4e74fc246da77348f43d/deep/0/the_original_emacs.png>
 
 ##### The Monokai theme and mordernize settings
 
@@ -56,7 +56,7 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 的一些设置，比如去掉`Toolbox` `Scrollbar` `Menubar`等等。除此之外配置一款等宽的适合编程的字体也必不可少，windows
 下面推荐`Consolas` Mac OSX下面推荐`Monokai`。
 
-![](https://www.evernote.com/shard/s65/sh/6d8e297b-ae3c-4f06-9521-fe58536a44b0/e9c12ca7ddf6e5158ed9c7af9957b3ef/deep/0/the_modernize_emacs.png)
+<https://www.evernote.com/shard/s65/sh/6d8e297b-ae3c-4f06-9521-fe58536a44b0/e9c12ca7ddf6e5158ed9c7af9957b3ef/deep/0/the_modernize_emacs.png>
 
 ##### Manage packages
 
@@ -71,7 +71,7 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
   )
 ```
 
-![](https://www.evernote.com/shard/s65/sh/1221d287-5a0b-44bd-881d-03ddf25cc953/606c8946ee9aa61ca4e5bbb3dd68250e/deep/0/emacs_elpa.png)
+<https://www.evernote.com/shard/s65/sh/1221d287-5a0b-44bd-881d-03ddf25cc953/606c8946ee9aa61ca4e5bbb3dd68250e/deep/0/emacs_elpa.png>
 
 ##### File and Buffer and Window
 
@@ -85,21 +85,21 @@ C-x k    kill buffer
 C-x C-b  ibuffer list
 ```
 
-![](https://www.evernote.com/shard/s65/sh/f079ea76-c65b-43ee-99ca-b6e3a7028036/eff4b3a06722d98627cc8c1d84f36c01/deep/0/emacs_file_open.png)
+<https://www.evernote.com/shard/s65/sh/f079ea76-c65b-43ee-99ca-b6e3a7028036/eff4b3a06722d98627cc8c1d84f36c01/deep/0/emacs_file_open.png>
 
 可视化的切换窗口
 
 ```
 C-x o    switch window
 ```
-![](https://www.evernote.com/shard/s65/sh/5f234727-ad46-4afb-b31a-a395cb1279cf/0a71e40a200dfd63f7aae80c8de9e1f0/deep/0/emacs_switch_window.png)
+<https://www.evernote.com/shard/s65/sh/5f234727-ad46-4afb-b31a-a395cb1279cf/0a71e40a200dfd63f7aae80c8de9e1f0/deep/0/emacs_switch_window.png>
 
 ##### Powerful Directory Management
 
 **Dired** 是一个**Emacs**内置的目录和文件管理器，加上`Dired+` `Dired-x`这两个插件他将变得更强大，这样你就很少
 回去开windows explorer了，常用的功能包括：`新建、删除、重命名、拷贝文件目录`以及`文件预览、打开、关闭、在目录树上下切换`等
 
-![](https://www.evernote.com/shard/s65/sh/a032a2d0-b165-44e1-812d-f3f1e809df8c/6d0aadf14c342e696e913c94d1d91668/deep/0/emacs_dired.png)
+<https://www.evernote.com/shard/s65/sh/a032a2d0-b165-44e1-812d-f3f1e809df8c/6d0aadf14c342e696e913c94d1d91668/deep/0/emacs_dired.png>
 
 #### Emacs for Programming
 
@@ -118,7 +118,7 @@ C-x o    switch window
 
 当你遇到**Emacs**，这些麻烦都可以去见鬼了，请看**三剑合璧**
 
-![](https://www.evernote.com/shard/s65/sh/ee63effe-f48a-45e2-a30b-4a67ca4b2429/39661fa3438e1165c84c82bb60548eee/deep/0/emacs_3in1.png)
+<https://www.evernote.com/shard/s65/sh/ee63effe-f48a-45e2-a30b-4a67ca4b2429/39661fa3438e1165c84c82bb60548eee/deep/0/emacs_3in1.png>
 
 
 #### Source code navigation
@@ -130,8 +130,8 @@ C-x o    switch window
 C-c o    open file in project
 C-x g    jump to function
 ```
-![](https://www.evernote.com/shard/s65/sh/ff96026b-f3a3-447c-b07a-8803017ee942/763229cba4cbc8ccbf3b1fe2bd2c1530/deep/0/emacs_open_in_project.png)
-![](https://www.evernote.com/shard/s65/sh/264f373a-be80-4ba9-8d56-d05d7c372dc6/3954500029938deb0a31b2301c5385c2/deep/0/emacs_jump_func.png)
+<https://www.evernote.com/shard/s65/sh/ff96026b-f3a3-447c-b07a-8803017ee942/763229cba4cbc8ccbf3b1fe2bd2c1530/deep/0/emacs_open_in_project.png>
+<https://www.evernote.com/shard/s65/sh/264f373a-be80-4ba9-8d56-d05d7c372dc6/3954500029938deb0a31b2301c5385c2/deep/0/emacs_jump_func.png>
 
 ```
 C-.     goto global define
@@ -140,24 +140,24 @@ C-,     back to the last postion
 C-;     find all symbol
 C-'     find all text
 ```
-![](https://www.evernote.com/shard/s65/sh/4e905d80-02b3-4927-8cbc-22788555a68e/4e0150bd9bdb66c72ef17597caeab0bf/deep/0/emacs_reference.png)
+<https://www.evernote.com/shard/s65/sh/4e905d80-02b3-4927-8cbc-22788555a68e/4e0150bd9bdb66c72ef17597caeab0bf/deep/0/emacs_reference.png>
 
 
 ### Auto Complete
 
 使用**Auto Complete**和**yasnippts** 可以构建一个强大的代码自动完成和模板系统的功能。
 
-![](https://www.evernote.com/shard/s65/sh/a0356dcf-cdf5-4027-85eb-a7eb7873af8c/84c3e181c654eeff9523d1b45abf374d/deep/0/emacs_ac.png) 
+<https://www.evernote.com/shard/s65/sh/a0356dcf-cdf5-4027-85eb-a7eb7873af8c/84c3e181c654eeff9523d1b45abf374d/deep/0/emacs_ac.png>
 
 ##### Version control and diff
 
 使用**psvn**和**magit**可以方便的在**Emacs**里面进行版本控制。
 
-![](https://www.evernote.com/shard/s65/sh/b0bbd128-ced4-4e0a-aadd-1edfe3295f17/fd7b50407b7394db5c35504713406eb3/deep/0/emacs_magit.png) 
+<https://www.evernote.com/shard/s65/sh/b0bbd128-ced4-4e0a-aadd-1edfe3295f17/fd7b50407b7394db5c35504713406eb3/deep/0/emacs_magit.png> 
 
 使用**ediff**可以方便的对代码进行**compare**和**merge**。
 
-![](https://www.evernote.com/shard/s65/sh/2b63a729-0dea-44a1-957c-1220ab130a20/d54345d1cf4fd9468dbbd73c834fbb63/deep/0/emacs_ediff.png)
+<https://www.evernote.com/shard/s65/sh/2b63a729-0dea-44a1-957c-1220ab130a20/d54345d1cf4fd9468dbbd73c834fbb63/deep/0/emacs_ediff.png>
 
 ##### Org mode for Emacs
 
@@ -168,7 +168,7 @@ C-'     find all text
 
 日历，计算器以及一些小游戏。
 
-![](https://www.evernote.com/shard/s65/sh/9e2a254a-2e78-4673-a950-1541cead8847/1ff3f52aea13bf66968f1b8e7fa2e22e/deep/0/emacs_misc.png)
+<https://www.evernote.com/shard/s65/sh/9e2a254a-2e78-4673-a950-1541cead8847/1ff3f52aea13bf66968f1b8e7fa2e22e/deep/0/emacs_misc.png>
 
 #### The End
 
