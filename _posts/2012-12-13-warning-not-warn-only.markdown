@@ -7,7 +7,7 @@ title: "编译器的warning往往不只是警告"
 
 #### Case 1
 
-```c
+```cpp
 /* this is main.c */
 int main(int argc, char **argv)
 {
@@ -32,7 +32,7 @@ Kevins-MacBook-Pro:Test kinreven$ gcc main.o foo.o -o main.exe
 
 #### Case 2
 
-```c
+```cpp
 /* this is main.c */
 char a,b;
 void f(int *a, int *b)
