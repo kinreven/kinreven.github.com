@@ -58,7 +58,7 @@ main.c:12: warning: passing argument 2 of ‘f’ from incompat
 
 #### Case 3
 
-```c
+```cpp
 /* this is main.c */
 void f(void)
 {
@@ -77,7 +77,7 @@ main.c:5: warning: comparison is always true due to limited range of data type
 
 #### Case 4    
 
-```c
+```cpp
 /* this is main.c */
 int *a, *b;
 void f(int delta, int base)
