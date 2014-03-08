@@ -1,6 +1,0 @@
-name: Kevin Ren's Blog
-markdown: redcarpet
-pygments: true
-paginate: 20
-paginate_path: "archives/:num"
-permalink: /:year/:month/:day/:title.html
