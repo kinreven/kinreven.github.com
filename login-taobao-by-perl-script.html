@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zhs">
+<head>
+
+        <title>用Perl实现登录淘宝并获取用户数据</title>
+        <meta charset="utf-8" />
+        <link href="http://kinreven.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Kevin's Blog Full RSS Feed" />
+        <link href="http://kinreven.github.io/feeds/lifestyle.rss.xml" type="application/rss+xml" rel="alternate" title="Kevin's Blog Categories RSS Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://kinreven.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://kinreven.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://kinreven.github.io/theme/pygment.css" />
+
+        <script src="http://kinreven.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://kinreven.github.io">Kevin's Blog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://kinreven.github.io">Home</a></li>
+
+                <li><a href="/archives.html">Archives</a></li>
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://kinreven.github.io/login-taobao-by-perl-script.html" rel="bookmark"
+                   title="Permalink to 用Perl实现登录淘宝并获取用户数据">用Perl实现登录淘宝并获取用户数据</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2012-12-13T12:00:00">
+                Thu 13 December 2012
+              </abbr>
+              <address class="vcard author">
+                By <a class="url fn" href="http://kinreven.github.io/author/kevin-ren.html">Kevin Ren</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <div class="highlight"><pre><span class="c1">#!/usr/bin/perl</span>
+
+<span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">LWP::</span><span class="n">UserAgent</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$argc</span> <span class="o">=</span> <span class="nv">@ARGV</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$argc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">print</span> <span class="s">&quot;Usage:\t./fetch.pl [taobao web pages url]\n&quot;</span><span class="p">;</span>
+    <span class="k">print</span> <span class="s">&quot;\t./fetch.pl http://i.taobao.com/my_taobao.htm &gt; my_taobao.html\n&quot;</span><span class="p">;</span>
+    <span class="k">print</span> <span class="s">&quot;\t./fetch.pl http://trade.taobao.com/trade/itemlist/list_bought_items.htm &gt; bought_list.html\n&quot;</span><span class="p">;</span>
+    <span class="nb">exit</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">my</span> <span class="nv">$url</span> <span class="o">=</span> <span class="nv">$ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="k">my</span> <span class="nv">$username</span> <span class="o">=</span> <span class="s">&#39;******&#39;</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$password</span> <span class="o">=</span> <span class="s">&#39;******&#39;</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$ua</span> <span class="o">=</span> <span class="nn">LWP::</span><span class="n">UserAgent</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="n">cookie_jar</span> <span class="o">=&gt;</span> <span class="p">{},);</span>
+<span class="nv">$ua</span><span class="o">-&gt;</span><span class="n">default_header</span><span class="p">(</span><span class="s">&#39;Referer&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;https://login.taobao.com/member/login.jhtml&#39;</span><span class="p">);</span>
+<span class="k">my</span> <span class="nv">$res</span><span class="o">=</span> <span class="nv">$ua</span><span class="o">-&gt;</span><span class="n">post</span><span class="p">(</span><span class="s">&#39;https://login.taobao.com/member/login.jhtml&#39;</span><span class="p">,</span>
+                   <span class="p">[</span>
+                    <span class="n">TPL_username</span> <span class="o">=&gt;</span> <span class="nv">$username</span><span class="p">,</span>
+                    <span class="n">TPL_password</span> <span class="o">=&gt;</span> <span class="nv">$password</span><span class="p">,</span>
+                    <span class="n">actionForStable</span> <span class="o">=&gt;</span> <span class="s">&#39;enable_post_user_action&#39;</span><span class="p">,</span>
+                    <span class="n">action</span> <span class="o">=&gt;</span> <span class="s">&#39;Authenticator&#39;</span><span class="p">,</span>
+                    <span class="n">event_submit_do_login</span> <span class="o">=&gt;</span> <span class="s">&#39;anything&#39;</span><span class="p">,</span>
+
+                   <span class="p">],</span>
+    <span class="p">);</span>
+
+<span class="nv">$res</span> <span class="o">=</span> <span class="nv">$ua</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+<span class="k">print</span> <span class="nv">$res</span><span class="o">-&gt;</span><span class="n">content</span><span class="p">;</span>
+</pre></div>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "login-taobao-by-perl-script.html";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://kinreven.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="/archives.html">Archives</a></li>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="http://kinreven.github.io/category/lifestyle.html">Lifestyle</a></li>
+		<li><a href="http://kinreven.github.io/category/programming.html">Programming</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-4"><a href="http://kinreven.github.io/tag/vim.html">VIM</a></li>
+	    <li class="tag-4"><a href="http://kinreven.github.io/tag/perl.html">Perl</a></li>
+	    <li class="tag-4"><a href="http://kinreven.github.io/tag/compiler.html">Compiler</a></li>
+	    <li class="tag-2"><a href="http://kinreven.github.io/tag/emacs.html">Emacs</a></li>
+	    <li class="tag-4"><a href="http://kinreven.github.io/tag/gnu-gcc.html">GNU GCC</a></li>
+	    <li class="tag-4"><a href="http://kinreven.github.io/tag/script.html">Script</a></li>
+	    <li class="tag-1"><a href="http://kinreven.github.io/tag/c-language.html">C Language</a></li>
+	    <li class="tag-2"><a href="http://kinreven.github.io/tag/algorithm.html">Algorithm</a></li>
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul>
+    <li><a href="http://weibo.com/kinreven">Weibo</a></li>
+    <li><a href="http://www.douban.com/people/58549254/">Douban</a></li>
+    <li><a href="http://www.zhihu.com/people/ren-wei-6">Zhihu</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+                <li><div class="btn primary"><a href="http://www.github.com/kinreven" target="_blank">Github</a></div></li>
+
+                <li><div class="btn twitter"><a href="https://twitter.com/kinreven" target="_blank">Twitter</a></div></li>
+
+                <li><div class="btn facebook"><a href="https://www.facebook.com/kinreven" target="_blank">Facebook</a></div></li>
+
+                <li><div class="btn danger"><a href="https://plus.google.com/u/0/109027967414472300463/" target="_blank">Google+</a></div></li>
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'kinreven';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="http://kinreven.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://kinreven.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://kinreven.github.io/theme/js/plugins.js"></script>
+</body>
+</html>

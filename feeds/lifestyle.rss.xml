@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kevin's Blog</title><link>http://kinreven.github.io/</link><description></description><atom:link href="http://kinreven.github.io/feeds/lifestyle.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 13 Dec 2012 12:00:00 +0800</lastBuildDate><item><title>如何高效的使用Emacs进行嵌入式开发</title><link>http://kinreven.github.io/how-to-work-with-emacs-closely.html</link><description>&lt;h4&gt;Preface&lt;/h4&gt;
+&lt;p&gt;在过去的3个月里面我一直且仅仅使用&lt;strong&gt;Emacs&lt;/strong&gt;, 在这之前当然我也尝试过各种Editor,
+ 其中也有不乏优秀的Editor,如Sublime Text和SlickEdit，他们也是自己曾经钟情已久且
+ 大力推荐的Editor。但是今天我却毅然的抛弃了他们，且绝不回头！ 为什么是Emacs?
+ 为什么不是VIM？ 我曾经觉得&lt;strong&gt;VIM&lt;/strong&gt;的几种模式是多么的逆天，而选择了&lt;strong&gt;Emacs&lt;/strong&gt;！
+ 现在看来当初是多么荒唐，然后&lt;strong&gt;VIM&lt;/strong&gt;的几种模式和奇高的编辑效率则被后世标榜为&lt;strong&gt;人机交互&lt;/strong&gt;
+ 的典范。当然这里膜拜完了&lt;strong&gt;VIM&lt;/strong&gt;有必要再赞扬一下&lt;strong&gt;Emacs&lt;/strong&gt;了。&lt;strong&gt;Emacs&lt;/strong&gt;是一种信仰！
+ &lt;strong&gt;Emacs&lt;/strong&gt;是一个伪装成编辑器的操作系统，他可以帮你做任何事，包括煮咖啡^_^&lt;/p&gt;
+&lt;p&gt;如果你看到这里有了学习&lt;strong&gt;Emacs&lt;/strong&gt;的冲动，但是事实上学习他也不是一件简单的事情，不过
+ 也不要有压力，比起&lt;strong&gt;VIM&lt;/strong&gt;它入门会快得多，但是要想像&lt;strong&gt;神一样使用它&lt;/strong&gt;，或许大部分人
+ 都不会哟这么一天，因为大部分人都不是神！ 我们只能去膜拜&lt;strong&gt;Richard Stallman&lt;/strong&gt; 和
+ &lt;strong&gt;Linux Torvalds&lt;/strong&gt; 大神！&lt;sup id="fnref:0"&gt;&lt;a class="footnote-ref" href="#fn:0" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Okay&lt;/strong&gt;, 回到正题， 最近由于越来越多的&lt;strong&gt;Linux&lt;/strong&gt;下面的开发,然后没有了&lt;strong&gt;sourceinsight&lt;/strong&gt;，
+ 没有了&lt;strong&gt;VS&lt;/strong&gt;，没有了&lt;strong&gt;windows&lt;/strong&gt;的各种"方便",唤起了大家学习&lt;strong&gt;VIM&lt;/strong&gt;和&lt;strong&gt;Emacs&lt;/strong&gt;的热情.
+ 所以趁此机会，分享一下个人的学习感悟，也希望能够让更多的人中毒， 这篇文章
+ 主要讲述一下我是如何 使用&lt;strong&gt;Emacs&lt;/strong&gt;更高效的&lt;strong&gt;Working&lt;/strong&gt;，如何将我们大部分的&lt;strong&gt;Workflow&lt;/strong&gt;
+ 放到&lt;strong&gt;Emacs&lt;/strong&gt;里面, 这里假设你已经了解了&lt;strong&gt;Emacs&lt;/strong&gt;的一些基本知识&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h4&gt;Which Emacs version?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Emacs&lt;/strong&gt; 如同大多数GNU软件一样具有良好的跨平台性，支援的平台包括&lt;code&gt;GNU Linux&lt;/code&gt;, &lt;code&gt;Mac OSX&lt;/code&gt; and
+&lt;code&gt;MS Windows&lt;/code&gt;等, 最新的release 版本为&lt;code&gt;24.3&lt;/code&gt;(March 11, 2003)。在Windows 平台上面虽然有
+&lt;strong&gt;GNU Emacs for Windows&lt;/strong&gt;，但是我强烈推荐&lt;strong&gt;GNU Emacs for Cygwin&lt;/strong&gt;! 他们差异在于前者是
+Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于后者可以获得和&lt;strong&gt;Linux/Unix&lt;/strong&gt;下面统一
+的使用体验，简单来说后者的&lt;code&gt;shell&lt;/code&gt;为Cygwin下面的&lt;code&gt;Bash&lt;/code&gt;,而前者则为windows的&lt;code&gt;cmd&lt;/code&gt;。这样你也不会
+受到windows的path和Posix path不兼容的问题困扰。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows下面安装&lt;strong&gt;Emacs&lt;/strong&gt;的方法和安装Cygwin下面其他软件一样，通过Cygwin Setup，然后选取emacs-w32即可。
+如果要安装GNU Emacs for Windows则可以通过GNU FTP&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;下载安装。&lt;/li&gt;
+&lt;li&gt;Linux下面安装，一般可以通过不同的Linux发行版的包管理器安装二进制包，或者通过源码编译进行安装(无网络的情况)。&lt;/li&gt;
+&lt;li&gt;Mac OSX下面有一个GNU Emacs for MacOSX的网站&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt;,他上面帮你built好了二进制包，你可以直接下载下来安装，
+而且除了提供release版本和Pretests版本外，他还有Nightlies的版本。让你随时可以用到最新的Emacs。
+当然你可以通过&lt;code&gt;Homebrew&lt;/code&gt;或者&lt;code&gt;Macport&lt;/code&gt;等包管理器在命令行下面安装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Make Emacs modernize&lt;/h4&gt;
+&lt;h5&gt;The screenshot of original Emacs&lt;/h5&gt;
+&lt;p&gt;由于历史的问题，无论是VIM还是Emacs他们的初始状态下看起来都是那么的古老(甚至可以说丑陋)，让初学者第一眼
+看去都很难相信这就是传说中的Emacs！&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/33ef025f-be64-4005-aee0-1c16974833f5/d52e1d71694c4e74fc246da77348f43d/deep/0/the_original_emacs.png"&gt;https://www.evernote.com/shard/s65/sh/33ef025f-be64-4005-aee0-1c16974833f5/d52e1d71694c4e74fc246da77348f43d/deep/0/the_original_emacs.png&lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;The Monokai theme and mordernize settings&lt;/h5&gt;
+&lt;p&gt;作为一款现代的编辑器拥有一个漂亮的外表是必不可少的，由于之前使用Sublime Text和Textmate的缘故，对&lt;code&gt;Monokai theme&lt;/code&gt;
+非常钟情，所以Emacs里面仍然保持使用&lt;code&gt;Monokai&lt;/code&gt;作为主题。当然看起来比较现代了还不行，还要改造一下&lt;strong&gt;Emacs&lt;/strong&gt;默认
+的一些设置，比如去掉&lt;code&gt;Toolbox&lt;/code&gt; &lt;code&gt;Scrollbar&lt;/code&gt; &lt;code&gt;Menubar&lt;/code&gt;等等。除此之外配置一款等宽的适合编程的字体也必不可少，windows
+下面推荐&lt;code&gt;Consolas&lt;/code&gt; Mac OSX下面推荐&lt;code&gt;Monokai&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/6d8e297b-ae3c-4f06-9521-fe58536a44b0/e9c12ca7ddf6e5158ed9c7af9957b3ef/deep/0/the_modernize_emacs.png"&gt;https://www.evernote.com/shard/s65/sh/6d8e297b-ae3c-4f06-9521-fe58536a44b0/e9c12ca7ddf6e5158ed9c7af9957b3ef/deep/0/the_modernize_emacs.png&lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;Manage packages&lt;/h5&gt;
+&lt;p&gt;从Emacs 24开始已经内置了插件包管理工具&lt;code&gt;elpa&lt;/code&gt;,这样你完全不必为寻找插件，升级插件，解决插件不兼容等问题而困惑了。安装
+，卸载和升级都灰常简单。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;when&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="n"&gt;emacs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;major&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;initialize&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;archives&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;melpa&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;http://melpa.milkbox.net/packages/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/1221d287-5a0b-44bd-881d-03ddf25cc953/606c8946ee9aa61ca4e5bbb3dd68250e/deep/0/emacs_elpa.png"&gt;https://www.evernote.com/shard/s65/sh/1221d287-5a0b-44bd-881d-03ddf25cc953/606c8946ee9aa61ca4e5bbb3dd68250e/deep/0/emacs_elpa.png&lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;File and Buffer and Window&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;IDO&lt;/strong&gt; mode ervery, 使用ido mode + ibuffer mode可以让你打开文件，切换buffer变得非常的酷。并且支持模糊匹配！&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;    &lt;span class="n"&gt;open&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;  &lt;span class="n"&gt;open&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;    &lt;span class="k"&gt;switch&lt;/span&gt; &lt;span class="n"&gt;buffer&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;    &lt;span class="n"&gt;kill&lt;/span&gt; &lt;span class="n"&gt;buffer&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;  &lt;span class="n"&gt;ibuffer&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/f079ea76-c65b-43ee-99ca-b6e3a7028036/eff4b3a06722d98627cc8c1d84f36c01/deep/0/emacs_file_open.png"&gt;https://www.evernote.com/shard/s65/sh/f079ea76-c65b-43ee-99ca-b6e3a7028036/eff4b3a06722d98627cc8c1d84f36c01/deep/0/emacs_file_open.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可视化的切换窗口&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;    &lt;span class="k"&gt;switch&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/5f234727-ad46-4afb-b31a-a395cb1279cf/0a71e40a200dfd63f7aae80c8de9e1f0/deep/0/emacs_switch_window.png"&gt;https://www.evernote.com/shard/s65/sh/5f234727-ad46-4afb-b31a-a395cb1279cf/0a71e40a200dfd63f7aae80c8de9e1f0/deep/0/emacs_switch_window.png&lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;Powerful Directory Management&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Dired&lt;/strong&gt; 是一个&lt;strong&gt;Emacs&lt;/strong&gt;内置的目录和文件管理器，加上&lt;code&gt;Dired+&lt;/code&gt; &lt;code&gt;Dired-x&lt;/code&gt;这两个插件他将变得更强大，这样你就很少
+回去开windows explorer了，常用的功能包括：&lt;code&gt;新建、删除、重命名、拷贝文件目录&lt;/code&gt;以及&lt;code&gt;文件预览、打开、关闭、在目录树上下切换&lt;/code&gt;等&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/a032a2d0-b165-44e1-812d-f3f1e809df8c/6d0aadf14c342e696e913c94d1d91668/deep/0/emacs_dired.png"&gt;https://www.evernote.com/shard/s65/sh/a032a2d0-b165-44e1-812d-f3f1e809df8c/6d0aadf14c342e696e913c94d1d91668/deep/0/emacs_dired.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Emacs for Programming&lt;/h4&gt;
+&lt;h5&gt;Code and Termial and UART in one&lt;/h5&gt;
+&lt;p&gt;在&lt;strong&gt;Firmware&lt;/strong&gt;开发中最常用的三个工具应该是编辑器(&lt;code&gt;source insight&lt;/code&gt;)，Cygwin shell(&lt;code&gt;bash&lt;/code&gt;)，串口终端(&lt;code&gt;ttermpro&lt;/code&gt;)。
+我们通用的workflow如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用source insight修改代码。&lt;/li&gt;
+&lt;li&gt;然后通过Cygwin的bash进行built。&lt;/li&gt;
+&lt;li&gt;再通过ttermpro观察串口的输出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大部分人还使用&lt;strong&gt;Windows&lt;/strong&gt;的cmd作为cygwin的终端，忍受着他那无力吐槽的复制粘贴。要想查找built的错误，还要复制到text里面再搜索的麻烦。
+在串口里面一样不能搜索，还要存log下来，用另外的editor进行搜索，复制和粘贴。使用&lt;strong&gt;Windows&lt;/strong&gt;自带的切换窗口CTRL+TAB，一个一个切，不觉得慢吗？
+或者用鼠标去任务栏点，不觉得很慢吗？&lt;/p&gt;
+&lt;p&gt;当你遇到&lt;strong&gt;Emacs&lt;/strong&gt;，这些麻烦都可以去见鬼了，请看&lt;strong&gt;三剑合璧&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/ee63effe-f48a-45e2-a30b-4a67ca4b2429/39661fa3438e1165c84c82bb60548eee/deep/0/emacs_3in1.png"&gt;https://www.evernote.com/shard/s65/sh/ee63effe-f48a-45e2-a30b-4a67ca4b2429/39661fa3438e1165c84c82bb60548eee/deep/0/emacs_3in1.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Source code navigation&lt;/h4&gt;
+&lt;p&gt;很多人不敢用&lt;strong&gt;VIM&lt;/strong&gt;或者&lt;strong&gt;Emacs&lt;/strong&gt;，或者说离不开&lt;strong&gt;source insight&lt;/strong&gt;，是因为前者没有IDE的各种代码导航功能。
+这里简单介绍使用&lt;code&gt;Cscope+Projectile+Imenue&lt;/code&gt;进行项目文件内的代码导航功能。当然基本的语法高亮，符号自动匹配，智能缩进等就不说了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;c&lt;/span&gt; &lt;span class="nx"&gt;o&lt;/span&gt;    &lt;span class="nx"&gt;open&lt;/span&gt; &lt;span class="nx"&gt;file&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;project&lt;/span&gt;
+&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="nx"&gt;g&lt;/span&gt;    &lt;span class="nx"&gt;jump&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/ff96026b-f3a3-447c-b07a-8803017ee942/763229cba4cbc8ccbf3b1fe2bd2c1530/deep/0/emacs_open_in_project.png"&gt;https://www.evernote.com/shard/s65/sh/ff96026b-f3a3-447c-b07a-8803017ee942/763229cba4cbc8ccbf3b1fe2bd2c1530/deep/0/emacs_open_in_project.png&lt;/a&gt;
+&lt;a href="https://www.evernote.com/shard/s65/sh/264f373a-be80-4ba9-8d56-d05d7c372dc6/3954500029938deb0a31b2301c5385c2/deep/0/emacs_jump_func.png"&gt;https://www.evernote.com/shard/s65/sh/264f373a-be80-4ba9-8d56-d05d7c372dc6/3954500029938deb0a31b2301c5385c2/deep/0/emacs_jump_func.png&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;     &lt;span class="kr"&gt;goto&lt;/span&gt; &lt;span class="nx"&gt;global&lt;/span&gt; &lt;span class="nx"&gt;define&lt;/span&gt;
+&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;/     goto function called&lt;/span&gt;
+&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="nx"&gt;back&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;last&lt;/span&gt; &lt;span class="nx"&gt;postion&lt;/span&gt;
+&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;     &lt;span class="nx"&gt;find&lt;/span&gt; &lt;span class="nx"&gt;all&lt;/span&gt; &lt;span class="nx"&gt;symbol&lt;/span&gt;
+&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;     &lt;span class="nx"&gt;find&lt;/span&gt; &lt;span class="nx"&gt;all&lt;/span&gt; &lt;span class="nx"&gt;text&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/4e905d80-02b3-4927-8cbc-22788555a68e/4e0150bd9bdb66c72ef17597caeab0bf/deep/0/emacs_reference.png"&gt;https://www.evernote.com/shard/s65/sh/4e905d80-02b3-4927-8cbc-22788555a68e/4e0150bd9bdb66c72ef17597caeab0bf/deep/0/emacs_reference.png&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Auto Complete&lt;/h3&gt;
+&lt;p&gt;使用&lt;strong&gt;Auto Complete&lt;/strong&gt;和&lt;strong&gt;yasnippts&lt;/strong&gt; 可以构建一个强大的代码自动完成和模板系统的功能。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/a0356dcf-cdf5-4027-85eb-a7eb7873af8c/84c3e181c654eeff9523d1b45abf374d/deep/0/emacs_ac.png"&gt;https://www.evernote.com/shard/s65/sh/a0356dcf-cdf5-4027-85eb-a7eb7873af8c/84c3e181c654eeff9523d1b45abf374d/deep/0/emacs_ac.png&lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;Version control and diff&lt;/h5&gt;
+&lt;p&gt;使用&lt;strong&gt;psvn&lt;/strong&gt;和&lt;strong&gt;magit&lt;/strong&gt;可以方便的在&lt;strong&gt;Emacs&lt;/strong&gt;里面进行版本控制。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/b0bbd128-ced4-4e0a-aadd-1edfe3295f17/fd7b50407b7394db5c35504713406eb3/deep/0/emacs_magit.png"&gt;https://www.evernote.com/shard/s65/sh/b0bbd128-ced4-4e0a-aadd-1edfe3295f17/fd7b50407b7394db5c35504713406eb3/deep/0/emacs_magit.png&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;使用&lt;strong&gt;ediff&lt;/strong&gt;可以方便的对代码进行&lt;strong&gt;compare&lt;/strong&gt;和&lt;strong&gt;merge&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/2b63a729-0dea-44a1-957c-1220ab130a20/d54345d1cf4fd9468dbbd73c834fbb63/deep/0/emacs_ediff.png"&gt;https://www.evernote.com/shard/s65/sh/2b63a729-0dea-44a1-957c-1220ab130a20/d54345d1cf4fd9468dbbd73c834fbb63/deep/0/emacs_ediff.png&lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;Org mode for Emacs&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Org mode&lt;/strong&gt;&lt;sup id="fnref:4"&gt;&lt;a class="footnote-ref" href="#fn:4" rel="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt; 本来是&lt;strong&gt;Emacs&lt;/strong&gt;的杀手锏功能。支持写 to-do 列表，日志管理，做笔记，做工程计划或者写网页。所以很多人用Org-mode来做&lt;strong&gt;GTD&lt;/strong&gt;的工具。
+我自己不是&lt;strong&gt;GTD&lt;/strong&gt;的重度使用者，然后一般的文档我都偏爱用&lt;strong&gt;Markdown mode for Emacs&lt;/strong&gt;&lt;sup id="fnref:5"&gt;&lt;a class="footnote-ref" href="#fn:5" rel="footnote"&gt;6&lt;/a&gt;&lt;/sup&gt;来写，所以Org mode实际没怎么使用。&lt;/p&gt;
+&lt;h5&gt;Miscellaneous&lt;/h5&gt;
+&lt;p&gt;日历，计算器以及一些小游戏。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/9e2a254a-2e78-4673-a950-1541cead8847/1ff3f52aea13bf66968f1b8e7fa2e22e/deep/0/emacs_misc.png"&gt;https://www.evernote.com/shard/s65/sh/9e2a254a-2e78-4673-a950-1541cead8847/1ff3f52aea13bf66968f1b8e7fa2e22e/deep/0/emacs_misc.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;The End&lt;/h4&gt;
+&lt;p&gt;上面简单介绍了我目前使用到的一些功能，当然这仅仅是&lt;strong&gt;Emacs&lt;/strong&gt;的九牛一毛。你或许会不屑说着些功能你都可以windows上面的各种tool来代替，没错或许如此，
+但是你试想一下，如果只给你一个&lt;code&gt;telnet&lt;/code&gt; &lt;code&gt;ssh&lt;/code&gt;到server上的terminal，你怎么进行软件开发？ 没错，Emacs与生俱来的command line模式可以毫无压力的
+搞定这些。你仅仅需要把你的&lt;code&gt;emacs configure&lt;/code&gt;文件copy到你的home目录即可！&lt;/p&gt;
+&lt;p&gt;我自己的&lt;code&gt;emacs configure&lt;/code&gt;文件经过近3个月的沉淀(基本上每周至少2次upate)，其间参考了各个大神的配置，也经历了两次大的版本改动，目前在elpa的package管理
+之下进行模块化，在目前的应用下面应该比较成熟。所以如果你刚开始&lt;strong&gt;Emacs&lt;/strong&gt;推荐和欢迎 &lt;strong&gt;fork&lt;/strong&gt;！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;公司本地的git仓库为： &lt;a href="\\wei-ren\sharegit\emacs"&gt;Emacs configure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;然后外网的&lt;strong&gt;Github&lt;/strong&gt;上面也有一份： &lt;a href="https://github.com/kinreven/emacs"&gt;https://github.com/kinreven/emacs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;如果你嫌安装&lt;strong&gt;Emacs&lt;/strong&gt;麻烦，Clone配置文件麻烦，那这里有一个&lt;a href="\\wei-ren\isync\cygwin_for_emacs.7z"&gt;Cygwin for Emacs&lt;/a&gt;的包，包含了我完整的Cygwin环境，
+你只需要把&lt;code&gt;/cygwin/home/user&lt;/code&gt; 改成你自己的用户名即可, 然后在terminal下面运行&lt;code&gt;emacs&lt;/code&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:0"&gt;
+&lt;p&gt;更多使用&lt;strong&gt;Emacs&lt;/strong&gt;的大牛列表请&lt;strong&gt;google&lt;/strong&gt; &lt;code&gt;著名 Emacs 用户列表&lt;/code&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:0" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;已经完整阅读和练习过&lt;strong&gt;Emacs Tour&lt;/strong&gt;，在&lt;strong&gt;Emacs Reference Card&lt;/strong&gt;的指引下能够操作&lt;strong&gt;Emacs&lt;/strong&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;&lt;a href="http://ftp.gnu.org/gnu/emacs/windows/"&gt;http://ftp.gnu.org/gnu/emacs/windows/&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:3"&gt;
+&lt;p&gt;&lt;a href="http://emacsformacosx.com/"&gt;http://emacsformacosx.com/&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:4"&gt;
+&lt;p&gt;&lt;a href="http://orgmode.org/"&gt;http://orgmode.org/&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 5 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:5"&gt;
+&lt;p&gt;本文即为Markdown格式创作，然后HTML发布。&amp;#160;&lt;a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 6 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Kevin Ren</dc:creator><pubDate>Thu, 13 Dec 2012 12:00:00 +0800</pubDate><guid>tag:kinreven.github.io,2012-12-13:how-to-work-with-emacs-closely.html</guid><category>Emacs</category></item><item><title>用Perl实现登录淘宝并获取用户数据</title><link>http://kinreven.github.io/login-taobao-by-perl-script.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#!/usr/bin/perl&lt;/span&gt;
+
+&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="n"&gt;strict&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;LWP::&lt;/span&gt;&lt;span class="n"&gt;UserAgent&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$argc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@ARGV&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$argc&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Usage:\t./fetch.pl [taobao web pages url]\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\t./fetch.pl http://i.taobao.com/my_taobao.htm &amp;gt; my_taobao.html\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\t./fetch.pl http://trade.taobao.com/trade/itemlist/list_bought_items.htm &amp;gt; bought_list.html\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nb"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$ARGV&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;******&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;******&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$ua&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;LWP::&lt;/span&gt;&lt;span class="n"&gt;UserAgent&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cookie_jar&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{},);&lt;/span&gt;
+&lt;span class="nv"&gt;$ua&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;default_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Referer&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;https://login.taobao.com/member/login.jhtml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$res&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$ua&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;https://login.taobao.com/member/login.jhtml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                   &lt;span class="p"&gt;[&lt;/span&gt;
+                    &lt;span class="n"&gt;TPL_username&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;TPL_password&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$password&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;actionForStable&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;enable_post_user_action&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;action&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Authenticator&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;event_submit_do_login&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;anything&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+
+                   &lt;span class="p"&gt;],&lt;/span&gt;
+    &lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="nv"&gt;$res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$ua&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$url&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="nv"&gt;$res&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Kevin Ren</dc:creator><pubDate>Thu, 13 Dec 2012 12:00:00 +0800</pubDate><guid>tag:kinreven.github.io,2012-12-13:login-taobao-by-perl-script.html</guid><category>Perl</category><category>Script</category></item></channel></rss>
