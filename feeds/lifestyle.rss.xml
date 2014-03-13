@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kevin's Blog</title><link>http://kinreven.github.io/</link><description></description><atom:link href="http://kinreven.github.io/feeds/lifestyle.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 13 Dec 2012 12:00:00 +0800</lastBuildDate><item><title>如何高效的使用Emacs进行嵌入式开发</title><link>http://kinreven.github.io/how-to-work-with-emacs-closely.html</link><description>&lt;h4&gt;Preface&lt;/h4&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kevin's Blog</title><link>http://kinreven.github.io/</link><description></description><atom:link href="http://kinreven.github.io/feeds/lifestyle.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 18 Oct 2013 12:00:00 +0800</lastBuildDate><item><title>在工作中如何优雅的使用Emacs</title><link>http://kinreven.github.io/how-to-work-with-emacs-closely.html</link><description>&lt;h4&gt;Preface&lt;/h4&gt;
 &lt;p&gt;在过去的3个月里面我一直且仅仅使用&lt;strong&gt;Emacs&lt;/strong&gt;, 在这之前当然我也尝试过各种Editor,
  其中也有不乏优秀的Editor,如Sublime Text和SlickEdit，他们也是自己曾经钟情已久且
  大力推荐的Editor。但是今天我却毅然的抛弃了他们，且绝不回头！ 为什么是Emacs?
@@ -156,36 +156,4 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 &lt;p&gt;本文即为Markdown格式创作，然后HTML发布。&amp;#160;&lt;a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 6 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Kevin Ren</dc:creator><pubDate>Thu, 13 Dec 2012 12:00:00 +0800</pubDate><guid>tag:kinreven.github.io,2012-12-13:how-to-work-with-emacs-closely.html</guid><category>Emacs</category></item><item><title>用Perl实现登录淘宝并获取用户数据</title><link>http://kinreven.github.io/login-taobao-by-perl-script.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#!/usr/bin/perl&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="n"&gt;strict&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;LWP::&lt;/span&gt;&lt;span class="n"&gt;UserAgent&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$argc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@ARGV&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$argc&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Usage:\t./fetch.pl [taobao web pages url]\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\t./fetch.pl http://i.taobao.com/my_taobao.htm &amp;gt; my_taobao.html\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;\t./fetch.pl http://trade.taobao.com/trade/itemlist/list_bought_items.htm &amp;gt; bought_list.html\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="nb"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$ARGV&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;******&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;******&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$ua&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;LWP::&lt;/span&gt;&lt;span class="n"&gt;UserAgent&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cookie_jar&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{},);&lt;/span&gt;
-&lt;span class="nv"&gt;$ua&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;default_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Referer&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;https://login.taobao.com/member/login.jhtml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$res&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$ua&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;https://login.taobao.com/member/login.jhtml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                   &lt;span class="p"&gt;[&lt;/span&gt;
-                    &lt;span class="n"&gt;TPL_username&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                    &lt;span class="n"&gt;TPL_password&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$password&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                    &lt;span class="n"&gt;actionForStable&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;enable_post_user_action&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                    &lt;span class="n"&gt;action&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Authenticator&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                    &lt;span class="n"&gt;event_submit_do_login&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;anything&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-
-                   &lt;span class="p"&gt;],&lt;/span&gt;
-    &lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="nv"&gt;$res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$ua&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$url&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="nv"&gt;$res&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Kevin Ren</dc:creator><pubDate>Thu, 13 Dec 2012 12:00:00 +0800</pubDate><guid>tag:kinreven.github.io,2012-12-13:login-taobao-by-perl-script.html</guid><category>Perl</category><category>Script</category></item></channel></rss>
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Kevin Ren</dc:creator><pubDate>Fri, 18 Oct 2013 12:00:00 +0800</pubDate><guid>tag:kinreven.github.io,2013-10-18:how-to-work-with-emacs-closely.html</guid><category>emacs</category><category>productivity</category></item></channel></rss>
