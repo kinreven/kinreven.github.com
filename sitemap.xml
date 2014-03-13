@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://kinreven.github.io/index.html</loc>
-<lastmod>2014-03-13T21:37:42-00:00</lastmod>
+<lastmod>2014-03-13T21:51:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kinreven.github.io/archives.html</loc>
-<lastmod>2014-03-13T21:37:42-00:00</lastmod>
+<lastmod>2014-03-13T21:51:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kinreven.github.io/tags.html</loc>
-<lastmod>2014-03-13T21:37:42-00:00</lastmod>
+<lastmod>2014-03-13T21:51:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kinreven.github.io/categories.html</loc>
-<lastmod>2014-03-13T21:37:42-00:00</lastmod>
+<lastmod>2014-03-13T21:51:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
