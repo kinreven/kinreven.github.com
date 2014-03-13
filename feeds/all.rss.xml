@@ -32,16 +32,12 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 当然你可以通过&lt;code&gt;Homebrew&lt;/code&gt;或者&lt;code&gt;Macport&lt;/code&gt;等包管理器在命令行下面安装。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Make Emacs modernize&lt;/h4&gt;
-&lt;h5&gt;The screenshot of original Emacs&lt;/h5&gt;
-&lt;p&gt;由于历史的问题，无论是VIM还是Emacs他们的初始状态下看起来都是那么的古老(甚至可以说丑陋)，让初学者第一眼
-看去都很难相信这就是传说中的Emacs！&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/33ef025f-be64-4005-aee0-1c16974833f5/d52e1d71694c4e74fc246da77348f43d/deep/0/the_original_emacs.png"&gt;https://www.evernote.com/shard/s65/sh/33ef025f-be64-4005-aee0-1c16974833f5/d52e1d71694c4e74fc246da77348f43d/deep/0/the_original_emacs.png&lt;/a&gt;&lt;/p&gt;
 &lt;h5&gt;The Monokai theme and mordernize settings&lt;/h5&gt;
 &lt;p&gt;作为一款现代的编辑器拥有一个漂亮的外表是必不可少的，由于之前使用Sublime Text和Textmate的缘故，对&lt;code&gt;Monokai theme&lt;/code&gt;
 非常钟情，所以Emacs里面仍然保持使用&lt;code&gt;Monokai&lt;/code&gt;作为主题。当然看起来比较现代了还不行，还要改造一下&lt;strong&gt;Emacs&lt;/strong&gt;默认
 的一些设置，比如去掉&lt;code&gt;Toolbox&lt;/code&gt; &lt;code&gt;Scrollbar&lt;/code&gt; &lt;code&gt;Menubar&lt;/code&gt;等等。除此之外配置一款等宽的适合编程的字体也必不可少，windows
 下面推荐&lt;code&gt;Consolas&lt;/code&gt; Mac OSX下面推荐&lt;code&gt;Monokai&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/6d8e297b-ae3c-4f06-9521-fe58536a44b0/e9c12ca7ddf6e5158ed9c7af9957b3ef/deep/0/the_modernize_emacs.png"&gt;https://www.evernote.com/shard/s65/sh/6d8e297b-ae3c-4f06-9521-fe58536a44b0/e9c12ca7ddf6e5158ed9c7af9957b3ef/deep/0/the_modernize_emacs.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img0" src="https://www.evernote.com/shard/s65/sh/6d8e297b-ae3c-4f06-9521-fe58536a44b0/e9c12ca7ddf6e5158ed9c7af9957b3ef/deep/0/the_modernize_emacs.png" /&gt;&lt;/p&gt;
 &lt;h5&gt;Manage packages&lt;/h5&gt;
 &lt;p&gt;从Emacs 24开始已经内置了插件包管理工具&lt;code&gt;elpa&lt;/code&gt;,这样你完全不必为寻找插件，升级插件，解决插件不兼容等问题而困惑了。安装
 ，卸载和升级都灰常简单。&lt;/p&gt;
@@ -53,7 +49,7 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/1221d287-5a0b-44bd-881d-03ddf25cc953/606c8946ee9aa61ca4e5bbb3dd68250e/deep/0/emacs_elpa.png"&gt;https://www.evernote.com/shard/s65/sh/1221d287-5a0b-44bd-881d-03ddf25cc953/606c8946ee9aa61ca4e5bbb3dd68250e/deep/0/emacs_elpa.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img1" src="https://www.evernote.com/shard/s65/sh/1221d287-5a0b-44bd-881d-03ddf25cc953/606c8946ee9aa61ca4e5bbb3dd68250e/deep/0/emacs_elpa.png" /&gt;&lt;/p&gt;
 &lt;h5&gt;File and Buffer and Window&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;IDO&lt;/strong&gt; mode ervery, 使用ido mode + ibuffer mode可以让你打开文件，切换buffer变得非常的酷。并且支持模糊匹配！&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;    &lt;span class="n"&gt;open&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;
@@ -64,32 +60,19 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/f079ea76-c65b-43ee-99ca-b6e3a7028036/eff4b3a06722d98627cc8c1d84f36c01/deep/0/emacs_file_open.png"&gt;https://www.evernote.com/shard/s65/sh/f079ea76-c65b-43ee-99ca-b6e3a7028036/eff4b3a06722d98627cc8c1d84f36c01/deep/0/emacs_file_open.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img2" src="https://www.evernote.com/shard/s65/sh/f079ea76-c65b-43ee-99ca-b6e3a7028036/eff4b3a06722d98627cc8c1d84f36c01/deep/0/emacs_file_open.png" /&gt;&lt;/p&gt;
 &lt;p&gt;可视化的切换窗口&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;    &lt;span class="k"&gt;switch&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/5f234727-ad46-4afb-b31a-a395cb1279cf/0a71e40a200dfd63f7aae80c8de9e1f0/deep/0/emacs_switch_window.png"&gt;https://www.evernote.com/shard/s65/sh/5f234727-ad46-4afb-b31a-a395cb1279cf/0a71e40a200dfd63f7aae80c8de9e1f0/deep/0/emacs_switch_window.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img3" src="https://www.evernote.com/shard/s65/sh/5f234727-ad46-4afb-b31a-a395cb1279cf/0a71e40a200dfd63f7aae80c8de9e1f0/deep/0/emacs_switch_window.png" /&gt;&lt;/p&gt;
 &lt;h5&gt;Powerful Directory Management&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;Dired&lt;/strong&gt; 是一个&lt;strong&gt;Emacs&lt;/strong&gt;内置的目录和文件管理器，加上&lt;code&gt;Dired+&lt;/code&gt; &lt;code&gt;Dired-x&lt;/code&gt;这两个插件他将变得更强大，这样你就很少
 回去开windows explorer了，常用的功能包括：&lt;code&gt;新建、删除、重命名、拷贝文件目录&lt;/code&gt;以及&lt;code&gt;文件预览、打开、关闭、在目录树上下切换&lt;/code&gt;等&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/a032a2d0-b165-44e1-812d-f3f1e809df8c/6d0aadf14c342e696e913c94d1d91668/deep/0/emacs_dired.png"&gt;https://www.evernote.com/shard/s65/sh/a032a2d0-b165-44e1-812d-f3f1e809df8c/6d0aadf14c342e696e913c94d1d91668/deep/0/emacs_dired.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img4" src="https://www.evernote.com/shard/s65/sh/a032a2d0-b165-44e1-812d-f3f1e809df8c/6d0aadf14c342e696e913c94d1d91668/deep/0/emacs_dired.png" /&gt;&lt;/p&gt;
 &lt;h4&gt;Emacs for Programming&lt;/h4&gt;
-&lt;h5&gt;Code and Termial and UART in one&lt;/h5&gt;
-&lt;p&gt;在&lt;strong&gt;Firmware&lt;/strong&gt;开发中最常用的三个工具应该是编辑器(&lt;code&gt;source insight&lt;/code&gt;)，Cygwin shell(&lt;code&gt;bash&lt;/code&gt;)，串口终端(&lt;code&gt;ttermpro&lt;/code&gt;)。
-我们通用的workflow如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;用source insight修改代码。&lt;/li&gt;
-&lt;li&gt;然后通过Cygwin的bash进行built。&lt;/li&gt;
-&lt;li&gt;再通过ttermpro观察串口的输出。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;大部分人还使用&lt;strong&gt;Windows&lt;/strong&gt;的cmd作为cygwin的终端，忍受着他那无力吐槽的复制粘贴。要想查找built的错误，还要复制到text里面再搜索的麻烦。
-在串口里面一样不能搜索，还要存log下来，用另外的editor进行搜索，复制和粘贴。使用&lt;strong&gt;Windows&lt;/strong&gt;自带的切换窗口CTRL+TAB，一个一个切，不觉得慢吗？
-或者用鼠标去任务栏点，不觉得很慢吗？&lt;/p&gt;
-&lt;p&gt;当你遇到&lt;strong&gt;Emacs&lt;/strong&gt;，这些麻烦都可以去见鬼了，请看&lt;strong&gt;三剑合璧&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/ee63effe-f48a-45e2-a30b-4a67ca4b2429/39661fa3438e1165c84c82bb60548eee/deep/0/emacs_3in1.png"&gt;https://www.evernote.com/shard/s65/sh/ee63effe-f48a-45e2-a30b-4a67ca4b2429/39661fa3438e1165c84c82bb60548eee/deep/0/emacs_3in1.png&lt;/a&gt;&lt;/p&gt;
-&lt;h4&gt;Source code navigation&lt;/h4&gt;
+&lt;h5&gt;Source code navigation&lt;/h5&gt;
 &lt;p&gt;很多人不敢用&lt;strong&gt;VIM&lt;/strong&gt;或者&lt;strong&gt;Emacs&lt;/strong&gt;，或者说离不开&lt;strong&gt;source insight&lt;/strong&gt;，是因为前者没有IDE的各种代码导航功能。
 这里简单介绍使用&lt;code&gt;Cscope+Projectile+Imenue&lt;/code&gt;进行项目文件内的代码导航功能。当然基本的语法高亮，符号自动匹配，智能缩进等就不说了。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;c&lt;/span&gt; &lt;span class="nx"&gt;o&lt;/span&gt;    &lt;span class="nx"&gt;open&lt;/span&gt; &lt;span class="nx"&gt;file&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;project&lt;/span&gt;
@@ -97,8 +80,8 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/ff96026b-f3a3-447c-b07a-8803017ee942/763229cba4cbc8ccbf3b1fe2bd2c1530/deep/0/emacs_open_in_project.png"&gt;https://www.evernote.com/shard/s65/sh/ff96026b-f3a3-447c-b07a-8803017ee942/763229cba4cbc8ccbf3b1fe2bd2c1530/deep/0/emacs_open_in_project.png&lt;/a&gt;
-&lt;a href="https://www.evernote.com/shard/s65/sh/264f373a-be80-4ba9-8d56-d05d7c372dc6/3954500029938deb0a31b2301c5385c2/deep/0/emacs_jump_func.png"&gt;https://www.evernote.com/shard/s65/sh/264f373a-be80-4ba9-8d56-d05d7c372dc6/3954500029938deb0a31b2301c5385c2/deep/0/emacs_jump_func.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img5" src="https://www.evernote.com/shard/s65/sh/ff96026b-f3a3-447c-b07a-8803017ee942/763229cba4cbc8ccbf3b1fe2bd2c1530/deep/0/emacs_open_in_project.png" /&gt;
+&lt;img alt="img6" src="https://www.evernote.com/shard/s65/sh/264f373a-be80-4ba9-8d56-d05d7c372dc6/3954500029938deb0a31b2301c5385c2/deep/0/emacs_jump_func.png" /&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;     &lt;span class="kr"&gt;goto&lt;/span&gt; &lt;span class="nx"&gt;global&lt;/span&gt; &lt;span class="nx"&gt;define&lt;/span&gt;
 &lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;/     goto function called&lt;/span&gt;
 &lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="nx"&gt;back&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;last&lt;/span&gt; &lt;span class="nx"&gt;postion&lt;/span&gt;
@@ -107,21 +90,20 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/4e905d80-02b3-4927-8cbc-22788555a68e/4e0150bd9bdb66c72ef17597caeab0bf/deep/0/emacs_reference.png"&gt;https://www.evernote.com/shard/s65/sh/4e905d80-02b3-4927-8cbc-22788555a68e/4e0150bd9bdb66c72ef17597caeab0bf/deep/0/emacs_reference.png&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Auto Complete&lt;/h3&gt;
+&lt;h5&gt;Auto Complete&lt;/h5&gt;
 &lt;p&gt;使用&lt;strong&gt;Auto Complete&lt;/strong&gt;和&lt;strong&gt;yasnippts&lt;/strong&gt; 可以构建一个强大的代码自动完成和模板系统的功能。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/a0356dcf-cdf5-4027-85eb-a7eb7873af8c/84c3e181c654eeff9523d1b45abf374d/deep/0/emacs_ac.png"&gt;https://www.evernote.com/shard/s65/sh/a0356dcf-cdf5-4027-85eb-a7eb7873af8c/84c3e181c654eeff9523d1b45abf374d/deep/0/emacs_ac.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img7" src="https://www.evernote.com/shard/s65/sh/a0356dcf-cdf5-4027-85eb-a7eb7873af8c/84c3e181c654eeff9523d1b45abf374d/deep/0/emacs_ac.png" /&gt;&lt;/p&gt;
 &lt;h5&gt;Version control and diff&lt;/h5&gt;
 &lt;p&gt;使用&lt;strong&gt;psvn&lt;/strong&gt;和&lt;strong&gt;magit&lt;/strong&gt;可以方便的在&lt;strong&gt;Emacs&lt;/strong&gt;里面进行版本控制。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/b0bbd128-ced4-4e0a-aadd-1edfe3295f17/fd7b50407b7394db5c35504713406eb3/deep/0/emacs_magit.png"&gt;https://www.evernote.com/shard/s65/sh/b0bbd128-ced4-4e0a-aadd-1edfe3295f17/fd7b50407b7394db5c35504713406eb3/deep/0/emacs_magit.png&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img alt="img8" src="https://www.evernote.com/shard/s65/sh/b0bbd128-ced4-4e0a-aadd-1edfe3295f17/fd7b50407b7394db5c35504713406eb3/deep/0/emacs_magit.png" /&gt;&lt;/p&gt;
 &lt;p&gt;使用&lt;strong&gt;ediff&lt;/strong&gt;可以方便的对代码进行&lt;strong&gt;compare&lt;/strong&gt;和&lt;strong&gt;merge&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/2b63a729-0dea-44a1-957c-1220ab130a20/d54345d1cf4fd9468dbbd73c834fbb63/deep/0/emacs_ediff.png"&gt;https://www.evernote.com/shard/s65/sh/2b63a729-0dea-44a1-957c-1220ab130a20/d54345d1cf4fd9468dbbd73c834fbb63/deep/0/emacs_ediff.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img9" src="https://www.evernote.com/shard/s65/sh/2b63a729-0dea-44a1-957c-1220ab130a20/d54345d1cf4fd9468dbbd73c834fbb63/deep/0/emacs_ediff.png" /&gt;&lt;/p&gt;
 &lt;h5&gt;Org mode for Emacs&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;Org mode&lt;/strong&gt;&lt;sup id="fnref:4"&gt;&lt;a class="footnote-ref" href="#fn:4" rel="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt; 本来是&lt;strong&gt;Emacs&lt;/strong&gt;的杀手锏功能。支持写 to-do 列表，日志管理，做笔记，做工程计划或者写网页。所以很多人用Org-mode来做&lt;strong&gt;GTD&lt;/strong&gt;的工具。
 我自己不是&lt;strong&gt;GTD&lt;/strong&gt;的重度使用者，然后一般的文档我都偏爱用&lt;strong&gt;Markdown mode for Emacs&lt;/strong&gt;&lt;sup id="fnref:5"&gt;&lt;a class="footnote-ref" href="#fn:5" rel="footnote"&gt;6&lt;/a&gt;&lt;/sup&gt;来写，所以Org mode实际没怎么使用。&lt;/p&gt;
 &lt;h5&gt;Miscellaneous&lt;/h5&gt;
 &lt;p&gt;日历，计算器以及一些小游戏。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.evernote.com/shard/s65/sh/9e2a254a-2e78-4673-a950-1541cead8847/1ff3f52aea13bf66968f1b8e7fa2e22e/deep/0/emacs_misc.png"&gt;https://www.evernote.com/shard/s65/sh/9e2a254a-2e78-4673-a950-1541cead8847/1ff3f52aea13bf66968f1b8e7fa2e22e/deep/0/emacs_misc.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img10" src="https://www.evernote.com/shard/s65/sh/9e2a254a-2e78-4673-a950-1541cead8847/1ff3f52aea13bf66968f1b8e7fa2e22e/deep/0/emacs_misc.png" /&gt;&lt;/p&gt;
 &lt;h4&gt;The End&lt;/h4&gt;
 &lt;p&gt;上面简单介绍了我目前使用到的一些功能，当然这仅仅是&lt;strong&gt;Emacs&lt;/strong&gt;的九牛一毛。你或许会不屑说着些功能你都可以windows上面的各种tool来代替，没错或许如此，
 但是你试想一下，如果只给你一个&lt;code&gt;telnet&lt;/code&gt; &lt;code&gt;ssh&lt;/code&gt;到server上的terminal，你怎么进行软件开发？ 没错，Emacs与生俱来的command line模式可以毫无压力的
@@ -131,8 +113,6 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 &lt;ul&gt;
 &lt;li&gt;公司本地的git仓库为： &lt;a href="\\wei-ren\sharegit\emacs"&gt;Emacs configure&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;然后外网的&lt;strong&gt;Github&lt;/strong&gt;上面也有一份： &lt;a href="https://github.com/kinreven/emacs"&gt;https://github.com/kinreven/emacs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;如果你嫌安装&lt;strong&gt;Emacs&lt;/strong&gt;麻烦，Clone配置文件麻烦，那这里有一个&lt;a href="\\wei-ren\isync\cygwin_for_emacs.7z"&gt;Cygwin for Emacs&lt;/a&gt;的包，包含了我完整的Cygwin环境，
-你只需要把&lt;code&gt;/cygwin/home/user&lt;/code&gt; 改成你自己的用户名即可, 然后在terminal下面运行&lt;code&gt;emacs&lt;/code&gt;!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
@@ -156,7 +136,7 @@ Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于�
 &lt;p&gt;本文即为Markdown格式创作，然后HTML发布。&amp;#160;&lt;a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 6 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Kevin Ren</dc:creator><pubDate>Fri, 18 Oct 2013 12:00:00 +0800</pubDate><guid>tag:kinreven.github.io,2013-10-18:how-to-work-with-emacs-closely.html</guid><category>emacs</category><category>productivity</category></item><item><title>Hey, 小心编译器的警告⚠</title><link>http://kinreven.github.io/be-carefull-with-warning-of-compiler.html</link><description>&lt;p&gt;编译警告warning是所有的程序员都不可能不会遇到的一件事情，而且往往在一个很大的project里面这更是司空见惯的事情，如果那一天你敲下Make的瞬间少了那些一串串的&lt;code&gt;warning:&lt;/code&gt;可能反而会怀疑是不是哪儿出来问题, 虽然说每一个人的编程习惯，个人素养不一样，对待warning的态度也不尽一致，但是总得来说80%的程序员都是抱着&lt;code&gt;warning is okay&lt;/code&gt;的态度；追根溯源，为什么编译器会有error和warning之分呢？通俗的来说，编译器确定不允许的就认为是error，然后一些违背原则但是编译器又不确定的就定义为warning，既然是不确定，那就有一个限度的概念，所以编译器都允许定制warning的级别，但是建议在Makfile中打开&lt;code&gt;Wall&lt;/code&gt;的选项，这样让更多的问题暴露无遗。所以说warning是编译器为程序员提供的友善建议和意见，即便编译器这么热心和蔼，但是仍然有很多程序员对warning不以为然。下面就简单总结几个&lt;strong&gt;GNU GCC&lt;/strong&gt;为我们编译时候发生warning的情况下，如果你不以为然，那么你将在稍后运行的时候变得很迷茫，苦恼和尴尬……&lt;/p&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Kevin Ren</dc:creator><pubDate>Fri, 18 Oct 2013 12:00:00 +0800</pubDate><guid>tag:kinreven.github.io,2013-10-18:how-to-work-with-emacs-closely.html</guid><category>emacs</category><category>productivity</category></item><item><title>Hey, 小心编译器的警告⚠</title><link>http://kinreven.github.io/be-carefull-with-warning-of-compiler.html</link><description>&lt;p&gt;编译警告warning是所有的程序员都不可能不会遇到的一件事情，而且往往在一个很大的project里面这更是司空见惯的事情，如果那一天你敲下Make的瞬间少了那些一串串的&lt;code&gt;warning:&lt;/code&gt;可能反而会怀疑是不是哪儿出来问题, 虽然说每一个人的编程习惯，个人素养不一样，对待warning的态度也不尽一致，但是总得来说80%的程序员都是抱着&lt;code&gt;warning is okay&lt;/code&gt;的态度；追根溯源，为什么编译器会有error和warning之分呢？通俗的来说，编译器确定不允许的就认为是error，然后一些违背原则但是编译器又不确定的就定义为warning，既然是不确定，那就有一个限度的概念，所以编译器都允许定制warning的级别，但是建议在Makfile中打开&lt;code&gt;Wall&lt;/code&gt;的选项，这样让更多的问题暴露无遗。所以说warning是编译器为程序员提供的友善建议和意见，即便编译器这么热心和蔼，但是仍然有很多程序员对warning不以为然。下面就简单总结几个&lt;strong&gt;GNU GCC&lt;/strong&gt;为我们编译时候发生warning的情况:&lt;/p&gt;
 &lt;h4&gt;Case 1&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cm"&gt;/* this is main.c */&lt;/span&gt;
 &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;argc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
