@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Kevin's Blog - 在工作中如何优雅的使用Emacs</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css" type="text/css"><link rel="stylesheet" href="/theme/css/main.css"><link rel="stylesheet" href="/theme/css/code.css"><script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/flatly/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="/theme/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="/theme/css/flatly.css" type="text/css">-->
+    <!--<link rel="stylesheet" href="/theme/css/main.css" type="text/css">-->
+    <!--<script src="/theme/js/jquery-1.10.2.min.js"></script>-->
+    <!--<script src="/theme/js/jquery-migrate-1.2.1.min.js"></script>-->
+    <!--<script src="/theme/js/bootstrap.min.js"></script>-->
+
+</head>
+
+<body>
+  <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+          <a class="navbar-brand" href="/">Kevin's Blog</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+              <li class="btn-group">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Archives<b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/tags.html">Tags</a></li>
+                  <li><a href="/archives.html">Archives</a></li>
+                  <li><a href="/categories.html">Categories</a></li>
+                </ul>
+              </li>
+              <li >
+                  <a href="http://about.me/kinreven/">About</a>
+                </li>
+
+        </ul>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="page-header">
+      <h1><a href="/posts/2013/Oct/how-to-work-with-emacs-closely/">在工作中如何优雅的使用Emacs</a></h1>
+    </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 col-md-offset-0">
+        </div>
+
+        <div class="col-md-8">
+
+    <span id="article_info">
+    <a class="label label-primary" 
+      href="/category/lifestyle.html">lifestyle</a>
+    <b>|</b>
+      <a class="label label-primary" 
+        href="/tag/emacs.html">emacs</a>
+      <a class="label label-primary" 
+        href="/tag/productivity.html">productivity</a>
+    <span class="glyphicon glyphicon-calendar"></span>Oct 18, 2013<span class="glyphicon glyphicon-user"></span>
+    <a href="/author/Kevin Ren.html">Kevin Ren</a>
+  </span>
+
+  <hr/>
+
+  <div>
+    <h4>Preface</h4>
+<p>在过去的3个月里面我一直且仅仅使用<strong>Emacs</strong>, 在这之前当然我也尝试过各种Editor,
+ 其中也有不乏优秀的Editor,如Sublime Text和SlickEdit，他们也是自己曾经钟情已久且
+ 大力推荐的Editor。但是今天我却毅然的抛弃了他们，且绝不回头！ 为什么是Emacs?
+ 为什么不是VIM？ 我曾经觉得<strong>VIM</strong>的几种模式是多么的逆天，而选择了<strong>Emacs</strong>！
+ 现在看来当初是多么荒唐，然后<strong>VIM</strong>的几种模式和奇高的编辑效率则被后世标榜为<strong>人机交互</strong>
+ 的典范。当然这里膜拜完了<strong>VIM</strong>有必要再赞扬一下<strong>Emacs</strong>了。<strong>Emacs</strong>是一种信仰！
+ <strong>Emacs</strong>是一个伪装成编辑器的操作系统，他可以帮你做任何事，包括煮咖啡^_^</p>
+<p>如果你看到这里有了学习<strong>Emacs</strong>的冲动，但是事实上学习他也不是一件简单的事情，不过
+ 也不要有压力，比起<strong>VIM</strong>它入门会快得多，但是要想像<strong>神一样使用它</strong>，或许大部分人
+ 都不会哟这么一天，因为大部分人都不是神！ 我们只能去膜拜<strong>Richard Stallman</strong> 和
+ <strong>Linux Torvalds</strong> 大神！<sup id="fnref:0"><a class="footnote-ref" href="#fn:0" rel="footnote">1</a></sup></p>
+<p><strong>Okay</strong>, 回到正题， 最近由于越来越多的<strong>Linux</strong>下面的开发,然后没有了<strong>sourceinsight</strong>，
+ 没有了<strong>VS</strong>，没有了<strong>windows</strong>的各种"方便",唤起了大家学习<strong>VIM</strong>和<strong>Emacs</strong>的热情.
+ 所以趁此机会，分享一下个人的学习感悟，也希望能够让更多的人中毒， 这篇文章
+ 主要讲述一下我是如何 使用<strong>Emacs</strong>更高效的<strong>Working</strong>，如何将我们大部分的<strong>Workflow</strong>
+ 放到<strong>Emacs</strong>里面, 这里假设你已经了解了<strong>Emacs</strong>的一些基本知识<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">2</a></sup></p>
+<h4>Which Emacs version?</h4>
+<p><strong>Emacs</strong> 如同大多数GNU软件一样具有良好的跨平台性，支援的平台包括<code>GNU Linux</code>, <code>Mac OSX</code> and
+<code>MS Windows</code>等, 最新的release 版本为<code>24.3</code>(March 11, 2003)。在Windows 平台上面虽然有
+<strong>GNU Emacs for Windows</strong>，但是我强烈推荐<strong>GNU Emacs for Cygwin</strong>! 他们差异在于前者是
+Windows本地编译生成的，而后者是依赖于Cygwin环境。原因在于后者可以获得和<strong>Linux/Unix</strong>下面统一
+的使用体验，简单来说后者的<code>shell</code>为Cygwin下面的<code>Bash</code>,而前者则为windows的<code>cmd</code>。这样你也不会
+受到windows的path和Posix path不兼容的问题困扰。</p>
+<ul>
+<li>Windows下面安装<strong>Emacs</strong>的方法和安装Cygwin下面其他软件一样，通过Cygwin Setup，然后选取emacs-w32即可。
+如果要安装GNU Emacs for Windows则可以通过GNU FTP<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">3</a></sup>下载安装。</li>
+<li>Linux下面安装，一般可以通过不同的Linux发行版的包管理器安装二进制包，或者通过源码编译进行安装(无网络的情况)。</li>
+<li>Mac OSX下面有一个GNU Emacs for MacOSX的网站<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">4</a></sup>,他上面帮你built好了二进制包，你可以直接下载下来安装，
+而且除了提供release版本和Pretests版本外，他还有Nightlies的版本。让你随时可以用到最新的Emacs。
+当然你可以通过<code>Homebrew</code>或者<code>Macport</code>等包管理器在命令行下面安装。</li>
+</ul>
+<h4>Make Emacs modernize</h4>
+<h5>The Monokai theme and mordernize settings</h5>
+<p>作为一款现代的编辑器拥有一个漂亮的外表是必不可少的，由于之前使用Sublime Text和Textmate的缘故，对<code>Monokai theme</code>
+非常钟情，所以Emacs里面仍然保持使用<code>Monokai</code>作为主题。当然看起来比较现代了还不行，还要改造一下<strong>Emacs</strong>默认
+的一些设置，比如去掉<code>Toolbox</code> <code>Scrollbar</code> <code>Menubar</code>等等。除此之外配置一款等宽的适合编程的字体也必不可少，windows
+下面推荐<code>Consolas</code> Mac OSX下面推荐<code>Monokai</code>。</p>
+<p><a href="https://www.evernote.com/shard/s65/sh/6d8e297b-ae3c-4f06-9521-fe58536a44b0/e9c12ca7ddf6e5158ed9c7af9957b3ef/deep/0/the_modernize_emacs.png">the_modernize_emacs.png</a></p>
+<h5>Manage packages</h5>
+<p>从Emacs 24开始已经内置了插件包管理工具<code>elpa</code>,这样你完全不必为寻找插件，升级插件，解决插件不兼容等问题而困惑了。安装
+，卸载和升级都灰常简单。</p>
+<div class="highlight"><pre><span class="p">(</span><span class="n">when</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="n">emacs</span><span class="o">-</span><span class="n">major</span><span class="o">-</span><span class="n">version</span> <span class="mi">24</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">require</span> <span class="err">&#39;</span><span class="n">package</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">package</span><span class="o">-</span><span class="n">initialize</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span> <span class="err">&#39;</span><span class="n">package</span><span class="o">-</span><span class="n">archives</span> <span class="err">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span> <span class="p">.</span> <span class="s">&quot;http://melpa.milkbox.net/packages/&quot;</span><span class="p">)</span> <span class="n">t</span><span class="p">)</span>
+  <span class="p">)</span>
+</pre></div>
+
+
+<p><a href="https://www.evernote.com/shard/s65/sh/1221d287-5a0b-44bd-881d-03ddf25cc953/606c8946ee9aa61ca4e5bbb3dd68250e/deep/0/emacs_elpa.png">emacs_elpa.png</a></p>
+<h5>File and Buffer and Window</h5>
+<p><strong>IDO</strong> mode ervery, 使用ido mode + ibuffer mode可以让你打开文件，切换buffer变得非常的酷。并且支持模糊匹配！</p>
+<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">f</span>    <span class="n">open</span> <span class="n">file</span>
+<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">f</span>  <span class="n">open</span> <span class="n">file</span>
+<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">b</span>    <span class="k">switch</span> <span class="n">buffer</span>
+<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">k</span>    <span class="n">kill</span> <span class="n">buffer</span>
+<span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">C</span><span class="o">-</span><span class="n">b</span>  <span class="n">ibuffer</span> <span class="n">list</span>
+</pre></div>
+
+
+<p><a href="https://www.evernote.com/shard/s65/sh/f079ea76-c65b-43ee-99ca-b6e3a7028036/eff4b3a06722d98627cc8c1d84f36c01/deep/0/emacs_file_open.png">emacs_file_open.png</a></p>
+<p>可视化的切换窗口</p>
+<div class="highlight"><pre><span class="n">C</span><span class="o">-</span><span class="n">x</span> <span class="n">o</span>    <span class="k">switch</span> <span class="n">window</span>
+</pre></div>
+
+
+<p><a href="https://www.evernote.com/shard/s65/sh/5f234727-ad46-4afb-b31a-a395cb1279cf/0a71e40a200dfd63f7aae80c8de9e1f0/deep/0/emacs_switch_window.png">emacs_switch_window.png</a></p>
+<h5>Powerful Directory Management</h5>
+<p><strong>Dired</strong> 是一个<strong>Emacs</strong>内置的目录和文件管理器，加上<code>Dired+</code> <code>Dired-x</code>这两个插件他将变得更强大，这样你就很少
+回去开windows explorer了，常用的功能包括：<code>新建、删除、重命名、拷贝文件目录</code>以及<code>文件预览、打开、关闭、在目录树上下切换</code>等</p>
+<p><a href="https://www.evernote.com/shard/s65/sh/a032a2d0-b165-44e1-812d-f3f1e809df8c/6d0aadf14c342e696e913c94d1d91668/deep/0/emacs_dired.png">emacs_dired.png</a></p>
+<h4>Emacs for Programming</h4>
+<h5>Source code navigation</h5>
+<p>很多人不敢用<strong>VIM</strong>或者<strong>Emacs</strong>，或者说离不开<strong>source insight</strong>，是因为前者没有IDE的各种代码导航功能。
+这里简单介绍使用<code>Cscope+Projectile+Imenue</code>进行项目文件内的代码导航功能。当然基本的语法高亮，符号自动匹配，智能缩进等就不说了。</p>
+<div class="highlight"><pre><span class="nx">C</span><span class="o">-</span><span class="nx">c</span> <span class="nx">o</span>    <span class="nx">open</span> <span class="nx">file</span> <span class="k">in</span> <span class="nx">project</span>
+<span class="nx">C</span><span class="o">-</span><span class="nx">x</span> <span class="nx">g</span>    <span class="nx">jump</span> <span class="nx">to</span> <span class="kd">function</span>
+</pre></div>
+
+
+<p><a href="https://www.evernote.com/shard/s65/sh/ff96026b-f3a3-447c-b07a-8803017ee942/763229cba4cbc8ccbf3b1fe2bd2c1530/deep/0/emacs_open_in_project.png">emacs_open_in_project.png</a>
+<a href="https://www.evernote.com/shard/s65/sh/264f373a-be80-4ba9-8d56-d05d7c372dc6/3954500029938deb0a31b2301c5385c2/deep/0/emacs_jump_func.png">emacs_jump_func.png</a></p>
+<div class="highlight"><pre><span class="nx">C</span><span class="o">-</span><span class="p">.</span>     <span class="kr">goto</span> <span class="nx">global</span> <span class="nx">define</span>
+<span class="nx">C</span><span class="o">-</span><span class="err">/     goto function called</span>
+<span class="nx">C</span><span class="o">-</span><span class="p">,</span>     <span class="nx">back</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">last</span> <span class="nx">postion</span>
+<span class="nx">C</span><span class="o">-</span><span class="p">;</span>     <span class="nx">find</span> <span class="nx">all</span> <span class="nx">symbol</span>
+<span class="nx">C</span><span class="o">-</span><span class="err">&#39;</span>     <span class="nx">find</span> <span class="nx">all</span> <span class="nx">text</span>
+</pre></div>
+
+
+<h5>Auto Complete</h5>
+<p>使用<strong>Auto Complete</strong>和<strong>yasnippts</strong> 可以构建一个强大的代码自动完成和模板系统的功能。</p>
+<p><a href="https://www.evernote.com/shard/s65/sh/a0356dcf-cdf5-4027-85eb-a7eb7873af8c/84c3e181c654eeff9523d1b45abf374d/deep/0/emacs_ac.png">emacs_ac.png</a></p>
+<h5>Version control and diff</h5>
+<p>使用<strong>psvn</strong>和<strong>magit</strong>可以方便的在<strong>Emacs</strong>里面进行版本控制。</p>
+<p><a href="https://www.evernote.com/shard/s65/sh/b0bbd128-ced4-4e0a-aadd-1edfe3295f17/fd7b50407b7394db5c35504713406eb3/deep/0/emacs_magit.png">emacs_magit.png</a></p>
+<p>使用<strong>ediff</strong>可以方便的对代码进行<strong>compare</strong>和<strong>merge</strong>。</p>
+<p><a href="https://www.evernote.com/shard/s65/sh/2b63a729-0dea-44a1-957c-1220ab130a20/d54345d1cf4fd9468dbbd73c834fbb63/deep/0/emacs_ediff.png">emacs_ediff.png</a></p>
+<h5>Org mode for Emacs</h5>
+<p><strong>Org mode</strong><sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">5</a></sup> 本来是<strong>Emacs</strong>的杀手锏功能。支持写 to-do 列表，日志管理，做笔记，做工程计划或者写网页。所以很多人用Org-mode来做<strong>GTD</strong>的工具。
+我自己不是<strong>GTD</strong>的重度使用者，然后一般的文档我都偏爱用<strong>Markdown mode for Emacs</strong><sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">6</a></sup>来写，所以Org mode实际没怎么使用。</p>
+<h5>Miscellaneous</h5>
+<p>日历，计算器以及一些小游戏。</p>
+<p><a href="https://www.evernote.com/shard/s65/sh/9e2a254a-2e78-4673-a950-1541cead8847/1ff3f52aea13bf66968f1b8e7fa2e22e/deep/0/emacs_misc.png">emacs_misc.png</a></p>
+<h4>The End</h4>
+<p>上面简单介绍了我目前使用到的一些功能，当然这仅仅是<strong>Emacs</strong>的九牛一毛。你或许会不屑说着些功能你都可以windows上面的各种tool来代替，没错或许如此，
+但是你试想一下，如果只给你一个<code>telnet</code> <code>ssh</code>到server上的terminal，你怎么进行软件开发？ 没错，Emacs与生俱来的command line模式可以毫无压力的
+搞定这些。你仅仅需要把你的<code>emacs configure</code>文件copy到你的home目录即可！</p>
+<p>我自己的<code>emacs configure</code>文件经过近3个月的沉淀(基本上每周至少2次upate)，其间参考了各个大神的配置，也经历了两次大的版本改动，目前在elpa的package管理
+之下进行模块化，在目前的应用下面应该比较成熟。所以如果你刚开始<strong>Emacs</strong>推荐和欢迎 <strong>fork</strong>！</p>
+<ul>
+<li>公司本地的git仓库为： <a href="\\wei-ren\sharegit\emacs">Emacs configure</a></li>
+<li>然后外网的<strong>Github</strong>上面也有一份： <a href="https://github.com/kinreven/emacs">https://github.com/kinreven/emacs</a></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:0">
+<p>更多使用<strong>Emacs</strong>的大牛列表请<strong>google</strong> <code>著名 Emacs 用户列表</code>&#160;<a class="footnote-backref" href="#fnref:0" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:1">
+<p>已经完整阅读和练习过<strong>Emacs Tour</strong>，在<strong>Emacs Reference Card</strong>的指引下能够操作<strong>Emacs</strong>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="http://ftp.gnu.org/gnu/emacs/windows/">http://ftp.gnu.org/gnu/emacs/windows/</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="http://emacsformacosx.com/">http://emacsformacosx.com/</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="http://orgmode.org/">http://orgmode.org/</a>&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>本文即为Markdown格式创作，然后HTML发布。&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div>
+
+  <hr/>
+
+      <ul class="pager">
+        <li class="previous disabled">
+        <a >
+          &laquo; Newer</a>
+        </li>
+        <li class="next">
+        <a href="/posts/2012/Sep/be-carefull-with-warning-of-compiler/">
+          Older &raquo;</a>
+        </li>
+      </ul>
+
+    <hr/>
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_identifier = "posts/2013/Oct/how-to-work-with-emacs-closely/";
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://kinreven.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+</div>
+
+        </div>
+
+        <div class="col-md-2">
+        </div>
+      </div>
+
+      <div id="pagination">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+
+    <nav id="footer" class="navbar navbar-default">
+    <div class="container">
+        <p id="footer-text" class="navbar-text text-center">
+          Powered by <a href="http://docs.getpelican.com">Pelican</a>,
+          theme <a href="http://github.com/yuex/pelican-iliork">iliork</a>            built on <a href="http://getbootstrap.com">Bootstrap</a> and <a href="http://bootstrap.com/flatly"> flatly</a>.
+          Copyright © <a href="/about.html">Kevin Ren</a>
+        </p>
+      </div>
+    </div>
+  </nav>
+
+</body>
+</html>
