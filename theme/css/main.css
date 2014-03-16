@@ -74,3 +74,9 @@ p {
   /*-webkit-hyphens: auto;*/
   /*-moz-hyphens: auto;*/
 }
+
+img {
+	max-width: 100%!important;
+	height: auto!important;
+	width:expression(this.width > 600 ? "600px" : this.width)!important;
+}
