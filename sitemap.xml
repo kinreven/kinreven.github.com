@@ -5,34 +5,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://kinreven.github.io/index.html</loc>
-<lastmod>2014-03-17T21:47:12-00:00</lastmod>
+<lastmod>2014-04-27T11:25:02-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kinreven.github.io/archives.html</loc>
-<lastmod>2014-03-17T21:47:12-00:00</lastmod>
+<lastmod>2014-04-27T11:25:02-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kinreven.github.io/tags.html</loc>
-<lastmod>2014-03-17T21:47:12-00:00</lastmod>
+<lastmod>2014-04-27T11:25:02-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kinreven.github.io/categories.html</loc>
-<lastmod>2014-03-17T21:47:12-00:00</lastmod>
+<lastmod>2014-04-27T11:25:02-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://kinreven.github.io/posts/2014/Mar/start-writing-with-a-nice-blog/</loc>
+<loc>http://kinreven.github.io/posts/2014/Mar/march-flowers-word/</loc>
 <lastmod>2014-03-16T15:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -81,7 +81,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://kinreven.github.io/tag/notes.html</loc>
+<loc>http://kinreven.github.io/tag/photography.html</loc>
 <lastmod>2014-03-16T15:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -95,15 +95,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://kinreven.github.io/tag/writing.html</loc>
-<lastmod>2014-03-16T15:00:00-00:00</lastmod>
+<loc>http://kinreven.github.io/tag/emacs.html</loc>
+<lastmod>2013-10-18T12:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://kinreven.github.io/tag/emacs.html</loc>
-<lastmod>2013-10-18T12:00:00-00:00</lastmod>
+<loc>http://kinreven.github.io/tag/notes.html</loc>
+<lastmod>2014-03-16T15:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
